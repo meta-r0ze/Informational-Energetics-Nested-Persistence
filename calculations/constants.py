@@ -14,6 +14,7 @@ from dataclasses import dataclass
 class MeasuredVal:
     value: float
     uncertainty: float
+    decimals: int    # Exact number of decimal places to print (Sig Figs)
     units: str
     citation: str
 
@@ -27,35 +28,40 @@ REFS = {
     # --- Fundamental Constants (CODATA 2022) ---
     "me": MeasuredVal(
         0.51099895000, 
-        0.00000000015, 
+        0.00000000015,
+        11,
         "MeV", 
-        "mohr_codata_2025"
+        "mohr_codata_2025",
     ),
     
     "alpha_inv": MeasuredVal(
         137.035999177, 
         0.000000021, 
+        9,
         "", 
         "mohr_codata_2025"
     ),
 
     "alpha_inv_morel": MeasuredVal(
         137.035999206,
-          0.000000011,
+        0.000000011,
+        9,
         "", 
         "morel_determination_2020"
     ),
 
     "alpha_inv_parker": MeasuredVal(
         137.035999046,
-          0.000000027,
+        0.000000027,
+        9,
         "", 
         "parker_measurement_2018"
     ),
 
     "alpha_inv_fan": MeasuredVal(
         137.035999166,
-          0.000000015,
+        0.000000015,
+        9,
         "", 
         "fan_measurement_2023"
     ),
@@ -63,13 +69,15 @@ REFS = {
     "rk": MeasuredVal(
         25812.80745,
         0.00001,
+        5,
         "\\Omega",
         "mohr_codata_2025"
     ),
 
     "Mp": MeasuredVal(
         1.22091e19, 
-        0.00001e19, 
+        0.00001e19,
+        5,
         "GeV", 
         "mohr_codata_2025"
     ),
@@ -78,6 +86,7 @@ REFS = {
     "gf": MeasuredVal(
         1.1663788e-5,    
         0.0000006e-5,    
+        7,
         "GeV^-2", 
         "navas_review_2024"
     ),
@@ -85,6 +94,7 @@ REFS = {
     "mz": MeasuredVal(
         91.1876,
         0.0021,
+        4,
         "GeV",
         "navas_review_2024"
     ),
@@ -92,6 +102,7 @@ REFS = {
     "mw": MeasuredVal(
         80.377,
         0.012,
+        3,
         "GeV",
         "navas_review_2024"  # Global Fit
     ),
@@ -100,6 +111,7 @@ REFS = {
     "mw_cdf": MeasuredVal(
         80.4335,
         0.0094,
+        4,
         "GeV",
         "cdf_collaboration_high-precision_2022"
     ),
@@ -107,6 +119,7 @@ REFS = {
     "mw_atlas": MeasuredVal(
         80.360,
         0.016,
+        3,
         "GeV",
         "aaboud_improved_2023"
     ),
@@ -114,13 +127,23 @@ REFS = {
     "sin2_w": MeasuredVal(
         0.22291,
         0.00011,
+        5,
         "",
         "navas_review_2024"
     ),
 
+    "sin2_w_global": MeasuredVal(
+        0.22354,
+        0.00006,
+        5,
+        "", 
+        "navas_review_2024",
+    ),
+
     "mh": MeasuredVal(
         125.25, 
-        0.17, 
+        0.17,
+        2, 
         "GeV",
         "navas_review_2024"
     ),
@@ -128,22 +151,34 @@ REFS = {
     # --- Strong Coupling (QCD) ---
     "alpha_s": MeasuredVal(
         0.1179, 
-        0.0009, 
+        0.0009,
+        4, 
         "",
         "denterria_strong_2024" 
+    ),
+
+    # --- Tau Scale Strong Coupling ---
+    "alpha_s_tau": MeasuredVal(
+        0.330,
+        0.014,
+        3,
+        "", 
+        "navas_review_2024",
     ),
 
     # --- Flavor Physics (CKM) ---
     "vus": MeasuredVal(
         0.22500, 
-        0.00067, 
+        0.00067,
+        5, 
         "",
         "navas_review_2024"
     ),
 
     "jarlskog": MeasuredVal(
         3.08e-5, 
-        0.15e-5, 
+        0.15e-5,
+        2, 
         "",
         "navas_review_2024"
     ),
@@ -151,7 +186,8 @@ REFS = {
     # --- Running Constants & Background ---
     "alpha_inv_mz": MeasuredVal(
         127.955, 
-        0.010, 
+        0.010,
+        3,
         "", 
         "navas_review_2024"
     ),
@@ -159,6 +195,7 @@ REFS = {
     "delta_alpha_mz": MeasuredVal(
         0.0590,
         0.0001,
+        4,
         "",
         "navas_review_2024"
     ),
@@ -167,6 +204,7 @@ REFS = {
     "G_coupling": MeasuredVal(
         1.752e-45, 
         0.001e-45, 
+        3,
         "", 
         "mohr_codata_2025"
     ),
@@ -175,6 +213,7 @@ REFS = {
     "vev": MeasuredVal(
         246.21965, 
         0.00006, 
+        5,
         "GeV", 
         "navas_review_2024"
     ),
@@ -182,6 +221,7 @@ REFS = {
     "lambda": MeasuredVal(
         0.129, 
         0.005, 
+        3,
         "", 
         "navas_review_2024"
     ),
@@ -189,8 +229,25 @@ REFS = {
     "ye_sm": MeasuredVal(
         2.935e-6, 
         0.001e-6, 
+        3,
         "", 
         "navas_review_2024"
+    ),
+
+    "vacuum_ratio": MeasuredVal(
+        1.38e-123, 
+        0.20e-123, # Expanded to encompass the H0 / \Omega_\Lambda systematic tensions
+        2,
+        "", 
+        "navas_review_2024", # Use PDG/Cosmology review rather than just Planck
+    ),
+
+    "nc_color": MeasuredVal(
+        3.0,
+        0.0,
+        0,
+        "",
+        "standard_model"
     ),
 }
 
@@ -208,7 +265,7 @@ def format_float_latex(num, precision=9):
     """
     return f"{num:.{precision}f}".rstrip('0').rstrip('.')
 
-def to_latex_sci(num, precision=4):
+def to_latex_sci(num, precision=4, unit=""):
     """Converts a float to LaTeX scientific notation."""
     if num == 0: return "0"
     exponent = int(math.floor(math.log10(abs(num))))
@@ -220,7 +277,8 @@ def to_latex_sci(num, precision=4):
         if abs(num - round(num)) < 1e-9:
             return f"{int(num)}"
         return f"{num:.{precision}f}".rstrip('0').rstrip('.')
-        
+    if unit != "":
+        return f"{mantissa:.{precision}f}e{exponent}"
     return f"{mantissa:.{precision}f} \\times 10^{{{exponent}}}"
 
 def to_latex_sci_with_err(val, err, precision=4):
@@ -244,7 +302,11 @@ def print_section(title, latex_mode=False):
     print(f"{'#'*70}\n")
 
 def print_latex_value(tag, valueToPrint, unit):
-    valueToPrintStr = format_float_latex(valueToPrint) if 0.001 < abs(valueToPrint) < 1000 else to_latex_sci(valueToPrint, 5)
+    if 0.001 < abs(valueToPrint) < 1000:
+        valueToPrintStr = format_float_latex(valueToPrint) 
+    else:
+        valueToPrintStr = to_latex_sci(valueToPrint, 8, unit)
+
     if unit != "":
         valueToPrintStr = f"\\qty{{{valueToPrintStr}}}{{{unit}}}"
     print(f"%<*{tag}>{valueToPrintStr}%</{tag}>")
@@ -294,27 +356,22 @@ def print_derivation(name, tag, formula_sym, latex_sym, formula_num, result,
 
             # --- EXPERIMENTAL VALUE TAG GENERATION ---
             
-            # Case A: Standard Float (e.g. 0.2229 +/- 0.0001)
-            # We use format_float_latex to force decimal representation (0.0009) 
-            # instead of scientific (9e-4) to prevent siunitx parsing errors.
+            # Case A: Standard Float
             if 0.001 < abs(target) < 100000:
-                 t_str = format_float_latex(target)
-                 e_str = format_float_latex(err_val)
+                 # Use the decimals field to rigidly enforce sig figs (preserves trailing zeros)
+                 t_str = f"{target:.{ref_obj.decimals}f}"
+                 e_str = f"{err_val:.{ref_obj.decimals}f}"
                  out_str = f"\\qty{{{t_str} \\pm {e_str}}}{{{unit}}}{cite_str}"
                  print(f"%<*{tag}ExperimentalValue>{out_str}%</{tag}ExperimentalValue>")
-            
-            # Case B: Scientific Notation (e.g. 1.22e19 +/- 0.05e19)
-            # We format the string manually to ensure (Val +/- Err) x 10^N structure
+            # Case B: Scientific Notation
             else:
-                 exp_str = to_latex_sci_with_err(target, err_val, 5)
-                 # We put the string inside \qty, relying on siunitx to parse the complex string 
-                 # or we just output the string if units are simple. 
-                 # Safer method for complex sci-notation is raw LaTeX math mode + unit
+                 # Pass ref_obj.decimals to format the mantissa correctly
+                 exp_str = to_latex_sci_with_err(target, err_val, ref_obj.decimals)
                  if unit:
                      out_str = f"${exp_str}$ \\unit{{{unit}}}{cite_str}"
                  else:
                      out_str = f"${exp_str}${cite_str}"
-                 print(f"%<*{tag}ExperimentalValue>{out_str}%</{tag}ExperimentalValue>") 
+                 print(f"%<*{tag}ExperimentalValue>{out_str}%</{tag}ExperimentalValue>")
 
             # Accuracy Sentence Logic
             abs_sigma = abs(sigma)
@@ -327,6 +384,7 @@ def print_derivation(name, tag, formula_sym, latex_sym, formula_num, result,
             
             print(f"%<*{tag}AccText>{acc_text}%</{tag}AccText>")
             print(f"%<*{tag}Diff>{to_latex_sci(diff, 3)}%</{tag}Diff>")
+            print(f"%<*{tag}Sigma>{sigma:.2f}%</{tag}Sigma>")
 
         print("") # Spacer in tex file
         return
@@ -384,9 +442,10 @@ def run_global_audit(results_dict, refs, latex_mode=False):
 
     run_global_audit_tier(results_dict, refs, tier1_checklist, latex_mode, "bosonic")
     run_global_audit_tier(results_dict, refs, tier2_checklist, latex_mode, "spectrum")
-    
+    run_global_audit_tier(results_dict, refs, tier1_checklist + tier2_checklist, latex_mode, "combined")
 
-def run_global_audit_tier(results_dict, refs, checklist, latex_mode=False, name=""):
+
+def run_global_audit_tier(results_dict, refs, checklist, latex_mode, name=""):
     """
     Performs Chi-Squared Audit using MeasuredVal objects.
     Outputs in a vertical, human-readable list format for precise digit comparison.
@@ -488,6 +547,7 @@ def main():
     L_EMBED = L_INTRINSIC + (2 * D)
     L_SUBSTRATE = (DELTA * D) + NU
     N = 2 * NU
+    R_M = D * DELTA
 
     # --- Universal Manifold Friction ---
     # Any integer capacity (N) projected onto the spacetime manifold (D*Delta)
@@ -500,58 +560,47 @@ def main():
         print(f"%<*InvLEmbed>{L_EMBED}%</InvLEmbed>")
         print(f"%<*InvLSubstrate>{L_SUBSTRATE}%</InvLSubstrate>")
         print(f"%<*InvN>{N}%</InvN>")
+        print(f"%<*InvRM>{R_M}%</InvRM>")
     elif not LATEX_MODE:
-        print(f"Capacities: L_INTRINSIC={L_INTRINSIC}, L_EMBED={L_EMBED}, N={N}")
+        print(f"Capacities: L_INTRINSIC={L_INTRINSIC}, L_EMBED={L_EMBED}, N={N}, RM={R_M}")
 
     # ==========================================
     # 3. SYSTEM II: THE VACUUM IMPEDANCE
     # ==========================================
     print_section("SYSTEM II: THE GEOMETRIC IMPEDANCE (Table II Audit)", LATEX_MODE)
 
-    # 1. Energy Vessel (Circumference)
-    comp_DE = PI * DELTA
-
-    # 2. Info Model (Boundary)
-    comp_DI = CHI
-
-    # 3. Protocol (Alignment)
-    comp_MI = -1 / ((D * DELTA) - SIGMA)
-
-    # 4. Governor (Vacuum Pressure)
-    comp_G = -(CHI / DELTA)
-
-    # 5. Temporal Tax (Entropy)
-    comp_T = (1 / pow(N, 3)) * (CHI / SIGMA) * (1 - (SIGMA / (D * DELTA)))
-
-    # 6. Persistence Margin (Resolution)
-    comp_PM = 1 / (L_EMBED * (SIGMA + 1) * pow(DELTA, 2))
-
+    comp_CAP = PI * DELTA
+    comp_MAP = CHI
+    comp_PRO = -1 / ((D * DELTA) - SIGMA)
+    comp_GOV = -(CHI / DELTA)
+    comp_TOL = (CHI * (R_M - SIGMA)) / (pow(N, 3) * SIGMA * R_M)
+    comp_MAR = 1 / (L_EMBED * (SIGMA + 1) * pow(DELTA, 2))
     # Summation
-    ALPHA_INV_GEO = comp_DE + comp_DI + comp_MI + comp_G + comp_T + comp_PM
+    ALPHA_INV_GEO = comp_CAP + comp_MAP + comp_PRO + comp_GOV + comp_TOL + comp_MAR
     ALPHA_GEO = 1.0 / ALPHA_INV_GEO
 
     # Table breakdown for human mode
     if not LATEX_MODE:
         print(f"{'COMPONENT':<25} | {'FORMULA':<25} | {'VALUE':<15}")
         print("-" * 70)
-        print(f"{'Energy Vessel':<25} | {'π * Δ':<25} | {comp_DE:+.8f}")
-        print(f"{'Info Model':<25} | {'χ':<25} | {comp_DI:+.8f}")
-        print(f"{'Protocol':<25} | {'-1/(DΔ - σ)':<25} | {comp_MI:+.8f}")
-        print(f"{'Governor':<25} | {'-χ/Δ':<25} | {comp_G:+.8f}")
-        print(f"{'Temporal Tax':<25} | {'Eq 16a':<25} | {comp_T:+.8e}")
-        print(f"{'Persistence Margin':<25} | {'Eq 16b':<25} | {comp_PM:+.8e}")
+        print(f"{'Capacity':<25} | {'π * Δ':<25} | {comp_CAP:+.8f}")
+        print(f"{'Map':<25} | {'χ':<25} | {comp_MAP:+.8f}")
+        print(f"{'Protocol':<25} | {'-1/(DΔ - σ)':<25} | {comp_PRO:+.8f}")
+        print(f"{'Governor':<25} | {'-χ/Δ':<25} | {comp_GOV:+.8f}")
+        print(f"{'Toll':<25} | {'Eq 16a':<25} | {comp_TOL:+.8e}")
+        print(f"{'Margin':<25} | {'Eq 16b':<25} | {comp_MAR:+.8e}")
         print("-" * 70)
         print(f"{'TOTAL IMPEDANCE':<25} | {'SUM':<25} | {ALPHA_INV_GEO:.9f}")
         print("-" * 70)
         print("")
     else:
         # Export components for Table II generation
-        print(f"%<*CompDE>{comp_DE:.5f}%</CompDE>")
-        print(f"%<*CompDI>{comp_DI:.5f}%</CompDI>")
-        print(f"%<*CompMI>{comp_MI:.5f}%</CompMI>")
-        print(f"%<*CompG>{comp_G:.5f}%</CompG>")
-        print(f"%<*CompT>{to_latex_sci(comp_T)}%</CompT>")
-        print(f"%<*CompPM>{to_latex_sci(comp_PM)}%</CompPM>")
+        print(f"%<*CompCAP>{comp_CAP:.5f}%</CompCAP>")
+        print(f"%<*CompMAP>{comp_MAP:.5f}%</CompMAP>")
+        print(f"%<*CompPRO>{comp_PRO:.5f}%</CompPRO>")
+        print(f"%<*CompGOV>{comp_GOV:.5f}%</CompGOV>")
+        print(f"%<*CompTOL>{to_latex_sci(comp_TOL)}%</CompTOL>")
+        print(f"%<*CompMAR>{to_latex_sci(comp_MAR)}%</CompMAR>")
         print("")
 
     print_derivation(
@@ -651,7 +700,6 @@ def main():
         result=ALPHA_S_GEO,
         latex_mode=LATEX_MODE,
         ref_key="alpha_s",
-        context="PDG World Average"
     )
 
     # --- QCD Running (Test 2: Evolution to Tau) ---
@@ -689,9 +737,7 @@ def main():
         formula_num=f"{ALPHA_S_TAU_LINEAR:.4f} * 15/16",
         result=ALPHA_S_TAU_CORRECTED,
         latex_mode=LATEX_MODE,
-        # Manual reference check against PDG 0.330
-        ref_key=None,
-        context="PDG Experimental Value (0.330)"
+        ref_key="alpha_s_tau"
     )
 
     # --- QED Running (Test 3: Z-Pole Resonance) ---
@@ -719,7 +765,6 @@ def main():
         result=ALPHA_INV_MZ_CALC,
         latex_mode=LATEX_MODE,
         ref_key="alpha_inv_mz",
-        context="Test 3 Validation"
     )
 
     # --- Weak Mixing Angle ---
@@ -735,7 +780,37 @@ def main():
         result=SIN2_THETA_W_GEO,
         latex_mode=LATEX_MODE,
         ref_key="sin2_w",
-        context="On-Shell definition"
+        context="On-Shell definition",
+        formula_step1=denom_weak
+    )
+
+    print_derivation(
+        name="Weak Mixing Angle (sin^2 theta_W)",
+        tag="WeakAngleGlobal",
+        formula_sym="Delta / (D*Delta + (ν * MANIFOLD_FRICTION) + σ)",
+        latex_sym=r"\frac{\Delta}{D\Delta + \nu + \sigma}",
+        formula_num=f"{DELTA} / {denom_weak:.4f}",
+        result=SIN2_THETA_W_GEO,
+        latex_mode=LATEX_MODE,
+        ref_key="sin2_w_global",
+        context="On-Shell definition",
+        formula_step1=denom_weak
+    )
+
+    # TCheck
+    TCHECK = (1/ALPHA_INV_GEO)**2 * SIN2_THETA_W_GEO
+
+    print_derivation(
+        name="Weak Mixing Angle (sin^2 theta_W)",
+        tag="WeakAngleTCheck",
+        formula_sym="Delta / (D*Delta + (ν * MANIFOLD_FRICTION) + σ)",
+        latex_sym=r"\frac{\Delta}{D\Delta + \nu + \sigma}",
+        formula_num=f"{DELTA} / {denom_weak:.4f}",
+        result=TCHECK,
+        latex_mode=LATEX_MODE,
+        ref_key="sin2_w",
+        context="On-Shell definition",
+        formula_step1=denom_weak
     )
 
     # --- Higgs VEV ---
@@ -751,7 +826,7 @@ def main():
     # 3. Thermodynamic Noise Correction (Generation Partitioning)
     # The Persistence Margin (PM) is partitioned across the 3 generation channels.
     N_GEN = SIGMA - CHI
-    NOISE_CORRECTION = 1.0 - (comp_PM / N_GEN)
+    NOISE_CORRECTION = 1.0 - (comp_MAR / N_GEN)
     V_MEV_PHYS = V_MEV_TOP * NOISE_CORRECTION
     
     # Final Physical VEV
@@ -789,13 +864,13 @@ def main():
         result=GF_GEO,
         latex_mode=LATEX_MODE,
         ref_key="gf",
-        context="experimental value"
     )
 
     # --- Higgs Parameters ---
     # Resonant Tax (Dynamics): 
     # The lattice oscillates at frequency Delta. We must subtract 1 unit of bandwidth (1/Delta)
-    LAMBDA_GEO = ((SIGMA - CHI) - (1.0 / DELTA)) / L_INTRINSIC
+    LAMBDA_NET=((SIGMA - CHI) - (1.0 / DELTA))
+    LAMBDA_GEO = LAMBDA_NET / L_INTRINSIC
     MH_GEO = math.sqrt(2 * LAMBDA_GEO) * V_GEV_PHYS
 
     print_derivation(
@@ -807,7 +882,7 @@ def main():
         result=LAMBDA_GEO,
         latex_mode=LATEX_MODE,
         ref_key="lambda",
-        context="experimental central value"
+        formula_step1=LAMBDA_NET
     )
 
     print_derivation(
@@ -819,11 +894,10 @@ def main():
         result=MH_GEO,
         latex_mode=LATEX_MODE,
         ref_key="mh",
-        context="observed mass"
     )
 
     # --- Electron Yukawa (y_e) ---
-    YE_BARE = comp_PM
+    YE_BARE = comp_MAR
     PROJECTION_COEFF = SIGMA / D  # 1.25
     SELF_ENERGY_CORRECTION = 1.0 + (PROJECTION_COEFF * ALPHA_GEO)
     YE_CORRECTED = YE_BARE * SELF_ENERGY_CORRECTION
@@ -843,14 +917,14 @@ def main():
 
     # --- Jarlskog Invariant (Time Asymmetry) ---
     PHI = (1 + math.sqrt(5)) / 2
-    J_GEO = pow(PHI, 2) * comp_T * MANIFOLD_FRICTION
+    J_GEO = pow(PHI, 2) * comp_TOL * MANIFOLD_FRICTION
 
     print_derivation(
         name="Jarlskog Invariant (J)",
         tag="Jarlskog",
         formula_sym="phi^2 * T_geo",
         latex_sym=r"\phi^2 \cdot T_{geo}",
-        formula_num=f"{PHI:.4f}^2 * {comp_T:.4e}",
+        formula_num=f"{PHI:.4f}^2 * {comp_TOL:.4e}",
         result=J_GEO,
         latex_mode=LATEX_MODE,
         ref_key="jarlskog",
@@ -894,16 +968,51 @@ def main():
     # ==========================================
     print_section("GRAVITY & HIERARCHY", LATEX_MODE)
 
-    # --- Residual Capacity ---
-    B_RES = NU - (CHI / (SIGMA - CHI)) - ALPHA_GEO
+    # --- Residual Capacity Components ---
+    BOUNDARY_STORAGE = CHI / (SIGMA - CHI)
+    GAUGE_LOAD = ALPHA_GEO
+    B_RES = NU - BOUNDARY_STORAGE - GAUGE_LOAD
 
     print_derivation(
         name="Residual Capacity (B_res)",
         tag="ResidualCap",
         formula_sym="ν - χ/(σ-χ) - α",
         latex_sym=r"\nu - \frac{\chi}{\sigma-\chi} - \alpha",
-        formula_num=f"{NU} - {CHI/3:.4f} - {ALPHA_GEO:.4e}",
+        formula_num=f"{NU} - {BOUNDARY_STORAGE:.4f} - {GAUGE_LOAD:.4e}",
         result=B_RES,
+        latex_mode=LATEX_MODE
+    )
+
+    # --- Bandwidth Conservation (Synthesis) ---
+    TOTAL_BANDWIDTH = B_RES + BOUNDARY_STORAGE + GAUGE_LOAD
+
+    print_derivation(
+        name="Boundary Storage",
+        tag="BoundaryStorage",
+        formula_sym="χ/(σ-χ)",
+        latex_sym=r"\frac{\chi}{\sigma-\chi}",
+        formula_num=f"{CHI}/({SIGMA}-{CHI})",
+        result=BOUNDARY_STORAGE,
+        latex_mode=LATEX_MODE
+    )
+
+    print_derivation(
+        name="Gauge Load",
+        tag="GaugeLoad",
+        formula_sym="α",
+        latex_sym=r"\alpha",
+        formula_num=f"{GAUGE_LOAD:.6f}",
+        result=GAUGE_LOAD,
+        latex_mode=LATEX_MODE
+    )
+
+    print_derivation(
+        name="Total Bandwidth Sum",
+        tag="TotalBandwidth",
+        formula_sym="B_res + Boundary + Gauge",
+        latex_sym=r"B_{res} + \frac{\chi}{\sigma-\chi} + \alpha",
+        formula_num=f"{B_RES:.4f} + {BOUNDARY_STORAGE:.4f} + {GAUGE_LOAD:.4f}",
+        result=TOTAL_BANDWIDTH,
         latex_mode=LATEX_MODE
     )
 
@@ -1007,9 +1116,42 @@ def main():
         formula_num=f"({ALPHA_GEO:.4f}/2) * ({M_GEO_MIN:.4e}/{MP_MEV_GEO:.4e})^4",
         result=VACUUM_HIERARCHY,
         latex_mode=LATEX_MODE,
-        context="10^-120 Hierarchy Solution (Target ~1e-123)"
+        ref_key="vacuum_ratio"
     )
     
+    # ==========================================
+    # 7. VACUUM ENERGY (THE 10^120 SOLUTION)
+    # ==========================================
+
+
+    # 1. QCD Axial Anomaly (Nc = 3)
+    Nc_geo = SIGMA - CHI
+    print_derivation(
+        name = "Color Charge (Nc)",
+        tag= "Nc",
+        formula_sym="sigma - chi",
+        latex_sym=r"\sigma - \chi",
+        formula_num=r"5 - 2",
+        result= Nc_geo,
+        latex_mode=args.latex,
+        ref_key="nc_color"
+    )
+    # 2. Weinberg Angle at Unification (GUT Scale)
+    # At symmetric phase: D4 (+) D4 both active -> 8 total dimensions
+    # Color sector (sigma-chi=3) over total lattice (2D=8)
+    sin2_gut = (SIGMA - CHI) / (D + D) 
+    print_derivation(
+        name="Weinberg Angle (GUT)",
+        tag="WeinbergGUT",
+        formula_sym=r"\frac{N_c}{2D}",
+        latex_sym=r"\frac{N_c}{2D}",
+        formula_num="3/8",
+        result=sin2_gut,
+        latex_mode=args.latex,
+        ref_key=None
+    )
+
+
     # Optional: Print the physical wavelength for debugging/sanity check
     # h_bar * c approx 197.327 MeV*fm
     # lambda = (2 * pi * h_bar * c) / M_min
