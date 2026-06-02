@@ -4,11 +4,11 @@
 \CatchFileBetweenTags{\AlphaInvVal}{constants.tex}{AlphaInvVal}
 \CatchFileBetweenTags{\AlphaSVal}{constants.tex}{AlphaSVal}
 \CatchFileBetweenTags{\AlphaSExperimentalValue}{constants.tex}{AlphaSExperimentalValue}
-\CatchFileBetweenTags{\AlphaSAccText}{constants.tex}{AlphaSAccText}
+\CatchFileBetweenTags{\AlphaSSigma}{constants.tex}{AlphaSSigma}
 
 \CatchFileBetweenTags{\AlphaRunningVal}{constants.tex}{AlphaRunningVal}
 \CatchFileBetweenTags{\AlphaRunningExperimentalValue}{constants.tex}{AlphaRunningExperimentalValue}
-\CatchFileBetweenTags{\AlphaRunningAccText}{constants.tex}{AlphaRunningAccText}
+\CatchFileBetweenTags{\AlphaRunningSigma}{constants.tex}{AlphaRunningSigma}
 
 \CatchFileBetweenTags{\AlphaSTauVal}{constants.tex}{AlphaSTauVal}
 
@@ -24,7 +24,7 @@ Under the \textbf{Capacity Partitioning} rule, the \textbf{Saturation Ratio} rep
 
 To maintain a confined state within the internal interaction bulk (the $\sigma - \chi = 3$ degrees of freedom, physically observed as ``color'' charge), the vacuum must fully saturate the available geometry. We derive $\alpha_s$ as the ratio of the \textbf{Total Active State Capacity} to the \textbf{Geometric Impedance} (the information load divided by the transmission resistance). The total substrate load is mandated by two persistence requirements:
 \begin{enumerate}
-    \item \textbf{Chiral Saturation ($\nu \cdot \eta$):} A confined state requires the synchronization of the full chiral rank ($\nu=16$) to prevent information leakage. As a bulk capacity, it is strictly subject to the The Coordinate Overhead ($\eta$).
+    \item \textbf{Chiral Saturation ($\nu \cdot \eta$):} A confined state requires the synchronization of the full chiral rank ($\nu=16$) to prevent information leakage. Because this total node capacity must be projected across the macroscopic spacetime grid, it is strictly subject to the Coordinate Overhead ($\eta$).
     \item \textbf{Flux Normalization ($1/D$):} To localize an internal charge within a $D$-dimensional manifold, a single unit of flux must be equipartitioned across the $D$ independent, orthogonal dimensions, yielding a geometric normalization factor of $1/D$.
 \end{enumerate}
 
@@ -59,7 +59,7 @@ The total vacuum rigidity is the trace of these combined structural tensors:
 \end{equation}
 
 \paragraph{Topological Distribution: The Screening Term}
-Fermions screen the charge by distributing the boundary topology ($\chi=2$) across the generation manifold ($n_{gen}=3$, derived strictly from the Triality of the $D_4$ internal sector in \textit{Informational Energetics: A Universal Architecture of Persistence}\cite{meyer_informational_2026}) is geometrically isomorphic to the available degrees of freedom in the internal color bulk ($\sigma - \chi = 5 - 2 = 3$). Distributing the boundary evenly across these internal dimensions yields the exact fractional screening per flavor:
+Fermions screen the charge by distributing the boundary topology ($\chi=2$) across the generation manifold ($n_{gen}=3$, derived strictly from the Triality of the $D_4$ internal sector in \textit{Informational Energetics: A Universal Architecture of Persistence}\cite{meyer_informational_2026}) which is geometrically isomorphic to the available degrees of freedom in the internal color bulk ($\sigma - \chi = 5 - 2 = 3$). Distributing the boundary evenly across these internal dimensions yields the exact fractional screening per flavor:
 \begin{equation}
     \beta_0^{\text{screen}} = \left( \frac{\chi}{n_{gen}} \right) \cdot n_f = \frac{2}{3} n_f
 \end{equation}
@@ -79,14 +79,16 @@ The geometric formula \eqref{eq:alphas_saturation} defines the coupling at compl
 \approx \mathbf{\AlphaSVal}
 \end{equation}
 
-\begin{itemize}
-\item \textbf{Geometric Prediction:} \AlphaSVal
-\item \textbf{Experimental Value:} \AlphaSExperimentalValue
-\item \textbf{Accuracy:} \AlphaSAccText
-\end{itemize}
+\begin{tabular}{ll}
+\textbf{Prediction:} & \AlphaSVal \\
+\textbf{Experiment:} & \AlphaSExperimentalValue \\
+\textbf{Accuracy:}   & $\AlphaSSigma \sigma$ \\
+\end{tabular}
 
 \CatchFileBetweenTags{\AlphaSTauLinearVal}{constants.tex}{AlphaSTauLinearVal}
 \CatchFileBetweenTags{\AlphaSTauCorrectedVal}{constants.tex}{AlphaSTauCorrectedVal}
+\CatchFileBetweenTags{\AlphaSTauCorrectedExperimentalValue}{constants.tex}{AlphaSTauCorrectedExperimentalValue}
+\CatchFileBetweenTags{\AlphaSTauCorrectedSigma}{constants.tex}{AlphaSTauCorrectedSigma}
 
 \subsubsection{Validation 2: Geometric Scaling (Running to \texorpdfstring{$M_\tau$}{Mtau})}
 
@@ -96,9 +98,9 @@ To verify the Stiffness derivation ($\beta_0$), we trace the coupling evolution 
 \alpha_s(M_\tau) = \frac{\alpha_s(M_Z)}{1 + \frac{\beta_0}{2\pi} \alpha_s(M_Z) \ln(M_\tau/M_Z)}
 \end{equation}
 
-This form, functionally identical to the perturbative Renormalization Group Equation, emerges here as the linear response of the lattice stiffness ($\beta_0$) to scale transformations.
+This form, functionally identical to the perturbative Renormalization Group Equation (RGE), emerges here as the linear response of the lattice stiffness ($\beta_0$) to scale transformations.
 
-\textit{Note on the Active Degrees of Freedom:} Standard perturbative QCD requires manually patching the RGE across quark mass thresholds (e.g., shifting from $n_f=5$ at $M_Z$ down to $n_f=3$ at $M_\tau$). In the $E_8$-Persistence theory, the global lattice stiffness ($\beta_0$) is a topological invariant of the bulk, driven by the $n_{gen}=3$ generation manifold rather than local kinematic mass thresholds. Therefore, the global geometric scaling utilizes the structural base state ($n_f = 3 \implies \beta_0 = 9$) across the entire macroscopic resolution interval. 
+\textit{Note on the Active Degrees of Freedom:} Standard perturbative QCD requires manually patching the RGE across quark mass thresholds (e.g., shifting from $n_f=5$ at $M_Z$ down to $n_f=3$ at $M_\tau$). In the $E_8$-Persistence theory, the global lattice stiffness ($\beta_0$) is a topological invariant of the bulk, driven by the $n_{gen}=3$ generation manifold. Therefore, the global geometric scaling utilizes the structural base state ($n_f = 3 \implies \beta_0 = 9$) across the entire macroscopic resolution interval. 
 
 Substituting the values:
 \begin{equation}
@@ -138,13 +140,13 @@ Numerically:
 \alpha_s^{\text{(eff)}}(M_\tau) = \AlphaSTauLinearVal \times \frac{15}{16} = \mathbf{\AlphaSTauCorrectedVal}
 \end{equation}
 
-\begin{itemize}
-    \item \textbf{Corrected Prediction:} \AlphaSTauCorrectedVal
-    \item \textbf{Experimental Value (PDG):} $0.330 \pm 0.014$
-    \item \textbf{Accuracy:} The corrected prediction matches the experimental mean exactly ($0.0\sigma$).
-\end{itemize}
+\begin{tabular}{ll}
+\textbf{Prediction:} & \AlphaSTauCorrectedVal \\
+\textbf{Experiment:} & $\AlphaSTauCorrectedExperimentalValue$ \\
+\textbf{Accuracy:}   & $\AlphaSTauCorrectedSigma \sigma$ \\
+\end{tabular}
 
-\textbf{Physical Interpretation:} This correction is not \textit{ad hoc}, the factor $15/16$ is uniquely determined by the chiral capacity $\nu=16$. Standard QFT recovers this effect through higher-order loop diagrams ($\alpha_s^2, \alpha_s^3, \ldots$). We obtain the same result directly via the geometric capacity limit, demonstrating that infinite perturbative loop expansions are merely the continuous Taylor approximations of a strict, finite geometric capacity limit.
+\textbf{Physical Interpretation:} This correction is uniquely determined by the chiral capacity $\nu=16$. Standard QFT recovers this effect through higher-order loop diagrams ($\alpha_s^2, \alpha_s^3, \ldots$). We obtain the same result directly via the geometric capacity limit, demonstrating that infinite perturbative loop expansions are merely the continuous Taylor approximations of a strict, finite geometric capacity limit.
 
 \textbf{Prediction:} This finite-capacity correction should be:
 \begin{itemize}
@@ -167,10 +169,12 @@ The QED Beta coefficient is the exact ratio of topology to spatial dilution, per
     \beta_0^{\text{QED}} = \frac{2\chi}{D-1} = \frac{4}{3}
 \end{equation}
 
-\textbf{Numerical Proof (The Unitary Resonance):}
-To test the QED screening effect at the Z-Pole ($M_Z$), we adopt the experimentally evaluated vacuum polarization ``Screening Fog'' $\Delta \alpha_{\text{total}} \approx 0.0590$ (PDG 2024) as an external input; deriving this quantity from the lattice requires integrating over the full particle spectrum (the subject of future work). Applying this shift to the static vacuum impedance yields a standard effective coupling of $\alpha^{-1}_{QFT} \approx 137.036 - 8.085 = 128.951$ (where the absolute shift is $\alpha^{-1}_{geo} \cdot \Delta \alpha_{\text{total}} \approx 8.085$). This leaves a glaring $\approx 1.0$ discrepancy against the experimental value of $127.955$.
+\textbf{Numerical Validation (The Unitary Resonance):}
+To test the QED screening effect at the Z-Pole ($M_Z$), we temporarily adopt the experimentally evaluated vacuum polarization ``Screening Fog'' $\Delta \alpha_{\text{total}} \approx 0.0590$ (PDG 2024) as an external input. We utilize this empirical anchor strictly to isolate and validate the geometric projection overhead ($\eta$) at the Z-Pole. (The \textit{ab initio} derivation of the full fermion spectrum required to calculate $\Delta\alpha_{total}$ purely from geometry is the subject of a companion paper, ensuring this temporary anchor does not introduce a free parameter into the fundamental architecture). 
 
-The $E_8$-Persistence framework explicitly resolves this gap. At the exact energy of the Z-Pole ($M_Z$), the vacuum undergoes a \textbf{Resonant Transition}, coupling to the Scalar Ground State ($\Delta^0 = 1$). This unitary geometric step is projected onto the physical manifold and is therefore subjected to the The Coordinate Overhead ($\eta$). The true geometric impedance is:
+Applying this shift to the static vacuum impedance yields a standard effective coupling of $\alpha^{-1}_{QFT} \approx 137.036 - 8.085 = 128.951$ (where the absolute shift is $\alpha^{-1}_{geo} \cdot \Delta \alpha_{\text{total}} \approx 8.085$). This leaves a glaring $\approx 1.0$ discrepancy against the experimental value of $127.955$.
+
+The $E_8$-Persistence theory explicitly resolves this gap. At the exact energy of the Z-Pole ($M_Z$), the vacuum undergoes a \textbf{Resonant Transition}, coupling to the Scalar Ground State ($\Delta^0 = 1$). This unitary geometric step is projected onto the physical manifold and is therefore subjected to The Coordinate Overhead ($\eta$). The true geometric impedance is:
 
 \begin{equation}
 \alpha^{-1}(M_Z) = \left[ \alpha^{-1}_{geo} - \text{Screening} \right] - \Delta^0 \cdot \eta
@@ -184,20 +188,20 @@ The $E_8$-Persistence framework explicitly resolves this gap. At the exact energ
 \end{split}
 \end{equation}
 
-\begin{itemize}
-    \item \textbf{Geometric Prediction:} \AlphaRunningVal
-    \item \textbf{Experimental Value:} \AlphaRunningExperimentalValue
-    \item \textbf{Accuracy:} \AlphaRunningAccText
-\end{itemize}
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & \AlphaRunningVal \\
+\textbf{Experiment:} & \AlphaRunningExperimentalValue \\
+\textbf{Accuracy:}   & $\AlphaRunningSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}
 
-\textbf{Physical Interpretation:} The precision of this match confirms that the difference between the low-energy coupling ($\sim 137$) and the Z-pole coupling ($\sim 128$) is not arbitrary. It is the exact sum of standard fermion screening (QFT) and exactly one unit of geometric resonance ($\Delta^0=1$), corrected for manifold projection efficiency ($\eta$).
-
-\textit{Scope Defense:} We utilize the experimental value of $\Delta\alpha_{total}$ strictly to isolate and validate the geometric projection overhead ($\eta$) at the Z-Pole. The ab initio derivation of the full fermion spectrum required to calculate $\Delta\alpha_{total}$ purely from geometry is the subject of a companion paper. This temporary empirical anchor does not introduce a free parameter into the fundamental architecture.
+\textbf{Physical Interpretation:} The difference between the low-energy coupling ($\sim 137$) and the Z-pole coupling ($\sim 128$) is the sum of standard fermion screening (QFT) and exactly one unit of geometric resonance ($\Delta^0=1$), corrected for manifold projection efficiency ($\eta$).
 
 \subsubsection{Summary: The Geometric Nature of Gauge Couplings}
 The Strong Force emerges as the unique solution to maximizing information throughput within the lattice constraints. Its magnitude ($\alpha_s \approx 0.1179$) represents channel saturation, while its evolution ($\beta_0 = 11 - 2n_f/3$) encodes the geometric stiffness of the vacuum. Both properties derive strictly from the invariant set $\{D=4, \chi=2, \sigma=5, n_{gen}=3\}$, with no adjustable parameters.
 
-This derivation demonstrates that the Casimir invariants of the Standard Model are not fundamental inputs, but are the \textbf{algebraic projections} of the underlying lattice topology. The successful prediction of QED screening ($4/3$) from identical geometric principles confirms this is not a coincidence, but a fundamental property of embedding topological charges in 4-dimensional spacetime.
+This derivation demonstrates that the Casimir invariants of the Standard Model are not fundamental inputs, but are the \textbf{algebraic projections} of the underlying lattice topology. The successful prediction of QED screening ($4/3$) from identical geometric principles confirms this is a fundamental property of embedding topological charges in 4-dimensional spacetime.
 
 \subsection{Corollary: The Strong CP Prohibition (\texorpdfstring{$\theta_{QCD} \equiv 0$}{theta\_QCD = 0})}
 \label{sec:strong_cp_prohibition}
@@ -214,7 +218,7 @@ A non-zero $\theta_{QCD}$ requires the gauge field to possess a topological wind
     \item \textbf{Specification Cost:} Because the $E_8$ substrate is discrete, any non-zero phase angle must manifest as a specific rational geometric ratio of the substrate's integer invariants (as will be demonstrated by the Cabibbo and Weak mixing angles). Encoding an arbitrary, continuous parameter $\theta \in[0, 2\pi)$ would require infinite precision, carrying an unbounded Shannon entropy that the finite node capacity ($\nu=16$) cannot physically support.
     \item \textbf{Coupling Cost:} For a discrete winding number to be meaningful, the color field (residing strictly in the internal $\sigma-\chi=3$ subspace) would have to maintain a persistent correlation with the spacetime boundary ($\chi=2$ surface). Because these sectors are geometrically orthogonal, this cross-sector coupling requires continuous, irreducible informational overhead to maintain against vacuum decoherence.
 \end{enumerate}
-The decoupled state where $\theta_{QCD}$ is geometrically undefined entirely avoids both entropic costs ($S_{spec}=0$, $S_{couple}=0$). By the Principle of Least Entropic Action, the vacuum strictly relaxes to the state of minimal information content—the geometric ground state where the winding number simply does not exist:
+The decoupled state where $\theta_{QCD}$ is geometrically undefined entirely avoids both entropic costs ($S_{spec}=0$, $S_{couple}=0$). By the Principle of Least Entropic Action, the vacuum strictly relaxes to the state of minimal information content, the geometric ground state where the winding number simply does not exist:
 \begin{equation}
     \theta_{QCD} \equiv 0 \quad \text{(Entropic Ground State)}
 \end{equation}
@@ -222,7 +226,7 @@ The decoupled state where $\theta_{QCD}$ is geometrically undefined entirely avo
 \subsubsection{Argument 2: The Unitary CP Budget and Lorentzian Projection}
 The lattice's finite capacity imposes a strict conservation law on time-reversal symmetry breaking, quantified by the Jarlskog invariant, $J$ (which serves as the \textbf{Toll} pillar of the Capacity Partition, derived formally in subsequent sections). 
 
-The $E_8 \to D_4 \oplus D_4$ projection assigns the Lorentzian metric signature (and thus the active temporal generator $\partial_t$) exclusively to the spacetime sector. Consequently, the geometric structure allocates the entire CP violation capacity to the chiral spacetime boundary ($\chi=2$), where it manifests as the CKM phase ($J \approx 3 \times 10^{-5}$), consuming the available temporal budget (as quantified by the Jarlskog invariant derived in \cref{subsec:jarlskog})
+The $E_8 \to D_4 \oplus D_4$ projection assigns the Lorentzian metric signature (and thus the active temporal generator $\partial_t$) exclusively to the spacetime sector. Consequently, the geometric structure allocates the entire CP violation capacity to the chiral spacetime boundary ($\chi=2$), where it manifests as the CKM phase ($J \approx 3 \times 10^{-5}$), consuming the available temporal budget (as quantified by the Jarlskog invariant derived in \cref{subsec:jarlskog}).
 
 The internal symmetry space ($\sigma-\chi=3$) that hosts the Strong Force is strictly Euclidean; it lacks a projection onto the temporal boundary. The color sector is therefore \textbf{informationally isolated from the Arrow of Time}. Because it possesses no temporal generator, its contribution to the CP budget must be identically zero:
 \begin{equation}

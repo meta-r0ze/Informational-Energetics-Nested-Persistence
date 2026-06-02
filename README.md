@@ -1,8 +1,8 @@
-The $E_8$-Persistence Theory I: Universal Couplings and the Geometric Substrate
+This repository contains the latex source for the "Informational Energetics: ested Persistence" paper which defines the three rules by which systems partion themselves.
 
-## Overview
+and then validates this by applying this to E8 to derive the constants such as 
 
-This repository contains the source code, derivations, and LaTeX manuscripts for Persistence Theory I: Universal Couplings and the Geometric Substrate.
+The rendered version can be viewed here: https://meta-r0ze.github.io/Informational-Energetics-Nested-Persistence//Informational_Energetics__Nested_Persistence.pdf
 
 ## Reproducibility
 

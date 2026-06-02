@@ -7,18 +7,20 @@
 
 \CatchFileBetweenTags{\GravCouplingVal}{constants.tex}{GravCouplingVal}
 \CatchFileBetweenTags{\GravCouplingExperimentalValue}{constants.tex}{GravCouplingExperimentalValue}
-\CatchFileBetweenTags{\GravCouplingAccText}{constants.tex}{GravCouplingAccText}
+\CatchFileBetweenTags{\GravCouplingSigma}{constants.tex}{GravCouplingSigma}
 
 \CatchFileBetweenTags{\PlanckMassVal}{constants.tex}{PlanckMassVal}
 \CatchFileBetweenTags{\PlanckMassExperimentalValue}{constants.tex}{PlanckMassExperimentalValue}
-\CatchFileBetweenTags{\PlanckMassAccText}{constants.tex}{PlanckMassAccText}
+\CatchFileBetweenTags{\PlanckMassSigma}{constants.tex}{PlanckMassSigma}
 
 \CatchFileBetweenTags{\VacuumEnergyScaleVal}{constants.tex}{VacuumEnergyScaleVal}
+\CatchFileBetweenTags{\VacuumEnergyScaleExperimentalValue}{constants.tex}{VacuumEnergyScaleExperimentalValue}
+\CatchFileBetweenTags{\VacuumEnergyScaleSigma}{constants.tex}{VacuumEnergyScaleSigma}
 
 \subsection{The Architectural Requirement}
 Gravity is traditionally treated as a distinct fundamental force described by General Relativity, operating with a coupling constant $G$ that is inexplicably $10^{40}$ times weaker than the gauge forces, and a vacuum energy $10^{120}$ times smaller than QFT predictions. This extreme disparity forces the Planck Mass ($M_P$) and Cosmological Constant ($\Lambda$) to be inserted into the Standard Model as manual scaling limits.
 
-We identify Gravity not as a separate force, but as the \textbf{Geometric Depth} of the lattice. Just as the Higgs regulates the energy density of Matter at the local surface, Gravity is the nested regulatory subsystem that maintains the structural integrity of the bulk geometry. It is an \textbf{Attenuated Signal}. Gauge forces originate at the topological boundary (the particle's ``surface''), while gravity originates at the lattice centroid (the particle's ``core''). The $10^{40}$ hierarchy is strictly the signal attenuation across this geometric depth.
+We identify Gravity as the \textbf{Geometric Depth} of the lattice. Just as the Higgs regulates the energy density of Matter at the local surface, Gravity is the nested regulatory subsystem that maintains the structural integrity of the bulk geometry. It is an \textbf{Attenuated Signal}. Gauge forces originate at the topological boundary (the particle's ``surface''), while gravity originates at the lattice centroid (the particle's ``core''). The $10^{40}$ hierarchy is strictly the signal attenuation across this geometric depth.
 
 As derived in \textit{Informational Energetics: Entropic Action} \cite{meyer_ieaction_2026}, the Bulk Regulator's architectural pillars mathematically necessitate the Einstein-Hilbert action (a massless spin-2 field preserving diffeomorphism invariance) to conserve local capacity and maintain volumetric resolution. In this section, we assume those derived functional forms and focus exclusively on calculating their exact numerical partition coefficients using the nested partitioning rules established in Section II: the gravitational coupling ($\alpha_G$), the Planck Mass ($M_P$), and the Cosmological Constant ($\Lambda$).
 
@@ -55,7 +57,7 @@ A signal propagating from the core to the surface attenuates by the Geometric Im
 
 The origin of this bulk signal is strictly dictated by the foundational symmetry of the lattice. For the $E_8 \to D_4 \oplus D_4$ projection to be persistent, it must preserve the self-duality of the parent lattice. This requires the bulk resonance to treat both orthogonal $D_4$ sublattices perfectly symmetrically. Any excitation centered on an integer-valued lattice node would inherently break this symmetry by selecting one sublattice over the other. 
 
-Therefore, the fundamental bulk resonance must manifest as a continuous standing wave, $\Psi(n) = \cos(2\pi n / \Delta)$, spanning the causal loop. To preserve exact self-duality, the geometric origin (the point of maximal bulk energy density) must be located exactly at the continuous geometric midpoint, the \textbf{Centroid} of the wavelength. For a causal period of $\Delta=43$, this uniquely fixes the origin at:
+Therefore, the bulk resonance must manifest as a continuous standing wave, $\Psi(n) = \cos(2\pi n / \Delta)$, spanning the causal loop. To preserve exact self-duality, the geometric origin (the point of maximal bulk energy density) must be located exactly at the continuous geometric midpoint, the \textbf{Centroid} of the wavelength. For a causal period of $\Delta=43$, this uniquely fixes the origin at:
 \begin{equation}
 r_{core} = \frac{\Delta}{2} = 21.5
 \end{equation}
@@ -72,11 +74,17 @@ The coupling is the product of the spare capacity (Bandwidth) and the attenuatio
 \begin{equation}
 \alpha_G = 15.326 \times (1.143 \times 10^{-46}) \approx \mathbf{\GravCouplingVal}
 \end{equation}
-\begin{itemize}
-    \item \textbf{Experimental Value:} \GravCouplingExperimentalValue
-    \item \textbf{Accuracy:} \GravCouplingAccText
-\end{itemize}
-\textbf{Physical Interpretation:} Gravity appears $10^{40}$ times weaker than electromagnetism not because it is intrinsically weak, but because it is deeply attenuated by the 21.5 layers of the lattice substrate.
+
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & $\GravCouplingVal$ \\
+\textbf{Experiment:} & \GravCouplingExperimentalValue \\
+\textbf{Accuracy:}   & $\GravCouplingSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}
+
+\textbf{Physical Interpretation:} Gravity appears $10^{40}$ times weaker than electromagnetism because it is deeply attenuated by the 21.5 layers of the lattice substrate.
 
 \subsection{Capacity: The Planck Mass \texorpdfstring{$M_P$}{MP} (The Unity Threshold)}
 Under \textbf{Rule 3: Impedance Matching}, the Planck Mass is the unique energy scale where the bulk geometric impedance achieves unity, enabling lossless signal transmission across the full lattice depth.
@@ -99,16 +107,20 @@ M_P = \frac{\MeMeVPrint \text{ MeV}}{\sqrt{15.326}} \cdot (\AlphaInvVal)^{10.75}
 \begin{equation}
 M_P \approx \mathbf{\PlanckMassVal}
 \end{equation}
-\begin{itemize}
-    \item \textbf{Geometric Prediction:} $\PlanckMassVal$
-    \item \textbf{Experimental Value:} \PlanckMassExperimentalValue
-    \item \textbf{Accuracy:} \PlanckMassAccText
-\end{itemize}
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & $\PlanckMassVal$ \\
+\textbf{Experiment:} & \PlanckMassExperimentalValue \\
+\textbf{Accuracy:}   & $\PlanckMassSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}
+
 
 \subsection{Margin: The Vacuum Energy \texorpdfstring{$\rho_{vac}$}{rhovac} (Lattice Resolution Floor)}
 \label{sec:vacuum_energy}
 
-Under \textbf{Rule 1: Capacity Partitioning}, the vacuum energy density is set by the thermal noise floor of the discrete substrate — the minimum resolvable bulk vibration after all higher-energy modes are allocated to the gauge and matter sectors.
+Under \textbf{Rule 1: Capacity Partitioning}, the vacuum energy density is set by the thermal noise floor of the discrete substrate, the minimum resolvable bulk vibration after all higher-energy modes are allocated to the gauge and matter sectors.
 
 Standard Quantum Field Theory predicts a vacuum energy density $\rho_{vac} \sim M_P^4$, summing zero-point fluctuations up to the Planck scale. This yields the ``Vacuum Catastrophe": a prediction $10^{120}$ times larger than cosmological observations.
 
@@ -159,7 +171,16 @@ Normalizing to the Planck density:
     \frac{\rho_{vac}}{M_P^4} = \frac{\alpha}{2} \left(\frac{M_{min}}{M_P}\right)^4 
     \approx \VacuumEnergyScaleVal
 \end{equation}
-This precise value ($\sim 10^{-123}$) matches the observed cosmological constant $\rho_{obs} \approx (2.3 \times 10^{-3} \text{ eV})^4$ to within observational uncertainty.
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & $\VacuumEnergyScaleVal$ \\
+\textbf{Experiment:} & \VacuumEnergyScaleExperimentalValue \\
+\textbf{Accuracy:}   & $\VacuumEnergyScaleSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}
+
+The Cosmological Constant is not an arbitrary dark energy pressure; it is the strict volumetric resolution floor of the finite lattice. By enforcing a physical channel capacity limit, the $10^{120}$ Vacuum Catastrophe mathematically cancels out, naturally yielding the observed dark energy scale purely from the thermal noise floor of the substrate.
 
 \subsubsection{Physical Interpretation}
 The $10^{120}$ discrepancy arises entirely from different assumptions about the vacuum structure:
@@ -174,7 +195,6 @@ The ratio is purely geometric:
     \sim \left(\frac{\nu\Delta^3}{\pi\alpha}\right)^4 
     \sim 10^{123}
 \end{equation}
-This is not fine-tuning; it is the direct, parameter-free geometric consequence of imposing a physical UV cutoff at the information-theoretic capacity limit.
 
 \subsection{Consistency Check: Bulk Impedance Closure}
 To confirm gravity is a mathematically closed persistent subsystem, we verify that the network equations close flawlessly at the Planck scale. While the Higgs impedance matching (System 5) tested independent geometric quantities against each other, the gravitational scale $M_P$ is explicitly defined by the unity coupling condition. Therefore, this serves as a rigorous \textbf{algebraic consistency check} rather than an independent validation: the defined parameters must naturally close the network equations without generating residual scalar mismatches.

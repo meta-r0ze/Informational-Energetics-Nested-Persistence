@@ -1,7 +1,7 @@
 \section{System 4: The Capacity Partition}
 \label{sec:capacity_partition}
 
-In the $E_8$-Persistence theory, the vacuum is not an infinite, passive arena; it is a resource-constrained computational substrate. As established in \textit{Informational Energetics: A Universal Architecture of Persistence} \cite{meyer_informational_2026}, each localized node possesses a strictly finite channel capacity ($\nu = 16$). 
+In the $E_8$-Persistence theory, the vacuum is a resource-constrained computational substrate. As established in \textit{Informational Energetics: A Universal Architecture of Persistence} \cite{meyer_informational_2026}, each localized node possesses a strictly finite channel capacity ($\nu = 16$). 
 
 This strict hardware limit presents a catastrophic systemic threat: \textbf{Bandwidth Exhaustion}. If the spatial geometry, the temporal updates, and the internal force generators all attempt to saturate the node simultaneously, the local complexity will exceed the 16 available channels. This would trigger Causal Aliasing and the local causal structure becomes unresolvable. The three rules of Nested Persistence (\cref{sec:nested_persistence}) resolve this threat by mandating a strict partitioning of the $\nu = 16$ budget across orthogonal interaction sectors.
 
@@ -49,3 +49,23 @@ The $E_8$ substrate's local causal neighborhood possesses a finite Manifold Reso
 \textit{Scope Defense:} Note that the temporal resonance ($\Delta = 43$) does not incur this overhead: as a periodic cycle with no endpoints, it requires no origin fixing. The coordinate overhead applies strictly to the spatial manifold volume ($D\Delta = 172$), where a discrete reference frame must be established.
 
 Because the Coordinate Overhead arises from fixing a reference frame within the $D=4$ manifold volume, it applies exclusively to quantities that integrate over this bulk volume (4-forms), such as the channel saturation that determines $\alpha_s$. Quantities defined by boundary topology (1-forms, Wilson Loops, the Euler characteristic $\chi$) do not reference the internal coordinate grid and are therefore geometrically exact; this is why the Fine-Structure Constant ($\alpha^{-1}$) required no such correction. When an operator involves both boundary topology and bulk integration, $\eta$ applies strictly to the volumetric component, not to the topological invariants.
+
+% --- Load Dynamic Nc Tags ---
+\CatchFileBetweenTags{\NcVal}{constants.tex}{NcVal}
+\CatchFileBetweenTags{\NcEq}{constants.tex}{NcEq}
+
+\subsection{The Interaction Remainder: Geometric Origin of Color Charge (\texorpdfstring{$N_c = 3$}{Nc = 3})}
+
+In the Standard Model, the number of quark colors ($N_c = 3$) is an empirical input. Its specific value is historically justified post-hoc by the requirement of \textbf{Anomaly Cancellation}: for the electroweak theory to be mathematically consistent (renormalizable), the sum of electric charges and hypercharges over all fermions in a generation must strictly vanish. This algebraic balancing act requires exactly $3$ colors of quarks to offset the leptons. The Standard Model cannot explain \textit{why} the universe selected exactly three colors to achieve this balance.
+
+In the $E_8$-Persistence framework, this is not an algebraic coincidence; it is a strict topological necessity. ``Color'' is identified geometrically as the \textbf{Interaction Remainder}. 
+
+To embed a persistent physical particle (a topological knot) into the vacuum, the system must map the lattice's fundamental interaction generators ($\sigma = 5$) onto the topological boundary of the defect ($\chi = 2$). The degrees of freedom not consumed by this boundary lock constitute the active internal bulk available for strong force mediation:
+
+\begin{equation}
+    N_c \equiv \NcEq = \mathbf{\NcVal}
+\end{equation}
+
+This perfectly derives the number of quark colors. The $N_c=3$ requirement for Standard Model anomaly cancellation is identically the geometric surplus required to embed a $\chi=2$ spherical boundary within a $\sigma=5$ interaction manifold. 
+
+What standard Quantum Field Theory perceives as the ``cancellation of mathematical anomalies'' is simply the algebraic expression of \textbf{Geometric Flux Conservation}. Information (phase flux) cannot be created or destroyed at a lattice node; the flux entering the 3-dimensional color bulk must perfectly balance the flux traversing the 2-dimensional topological boundary, naturally enforcing the hypercharge assignments of the Standard Model.
