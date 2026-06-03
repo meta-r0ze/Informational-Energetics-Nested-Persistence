@@ -2,7 +2,7 @@ This repository contains the latex source for the "Informational Energetics: est
 
 and then validates this by applying this to E8 to derive the constants such as 
 
-The rendered version can be viewed here: https://meta-r0ze.github.io/Informational-Energetics-Nested-Persistence//Informational_Energetics__Nested_Persistence.pdf
+The rendered version can be viewed here: https://meta-r0ze.github.io/Informational-Energetics-Nested-Persistence/Informational_Energetics__Nested_Persistence.pdf
 
 ## Reproducibility
 
