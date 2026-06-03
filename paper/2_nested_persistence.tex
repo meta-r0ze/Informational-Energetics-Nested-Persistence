@@ -1,25 +1,48 @@
 \section{Architecture of Nested Persistence}
 \label{sec:nested_persistence}
-Any finite information-processing system (e.g., a biological cell, an economic network, or a physical substrate) faces a fundamental computing bottleneck. When confronted with complex entropic threats (e.g., keeping its internal parts intact while simultaneously coordinating with the world around it) the state space that a single control loop must regulate expands exponentially. Once this exceeds the system's finite processing capacity, the system's internal model diverges from its environment and it collapses. Systems that persist survive 
-by structurally partitioning into specialized subsystems, each managing a tractable fraction of the total threat space. Three rules govern this partitioning:
 
-\begin{enumerate}
-    \item \textbf{Capacity Partitioning:}
-    \label{rule_capacity_partitioning}
-    By Ashby's Law of Requisite Variety \cite{raadt_ashbys_1987}, a control system must possess at least as many states as the perturbations it seeks to regulate. However, the maximum rate at which a system can transition between states is strictly bounded by its physical capacity \cite{margolus_maximum_1998}. \textit{When the number of concurrent regulatory demands requires a computation rate exceeding what a single loop can execute within its fundamental update cycle, the system must split into parallel, nested subsystems.}
+Every finite information-processing system such as a cell, corporation, or physical substrate hits a hard capacity ceiling. When entropic demands multiply (internal maintenance, external coordination, or both), the regulatory burden on any single loop grows. Once that burden exceeds capacity, the system's internal model loses track of reality and collapses. Only systems that partition persist. They do so by splitting into specialized subsystems, each managing a tractable fraction of the total threat space. This partitioning is governed by three operations: Capacity Partitioning splits the budget across orthogonal demands, Reversible Encoding conserves the indivisible remainder without erasure, and Impedance Matching binds the nested layers without reflection loss.
+
+\subsection{Example}
+Consider a firm with a finite operational budget that must simultaneously manufacture, innovate, and comply with regulations. \textbf{Capacity Partitioning} requires splitting the budget across these three departments such that the sum of their allocations plus accounting overhead exhausts the total. When the budget does not divide evenly, \textbf{Reversible Encoding} requires carrying the indivisible remainder as a strategic reserve rather than discarding it. Simultaneously, \textbf{Impedance Matching} resolves the friction when an executive team generates initiatives at a higher frequency than an R\&D department can absorb; a middle manager acts as a transformer, scaling and scheduling the executive signal to match the departmental aperture and prevent reflection loss.
+
+\subsection{Capacity Partitioning}
+\label{rule_capacity_partitioning}
+
+\textbf{Foundational Principle.} By Ashby's Law of Requisite Variety \cite{raadt_ashbys_1987}, a control system must possess at least as many states as the perturbations it seeks to regulate. However, the maximum rate at which a system can transition between states is strictly bounded by its physical capacity \cite{margolus_maximum_1998}.
+
+\textbf{Activation Threshold.} \textit{When the number of concurrent regulatory demands requires a computation rate exceeding what a single loop can execute within its fundamental update cycle, the system must split into parallel, nested subsystems.}
+
+\textbf{Operational Mandate.} The system must partition its resources such that the sum of the active subsystem capacities exhausts the total budget.
+
+\textbf{Structural Cost.} Creating a boundary between subsystems inherently consumes capacity (synchronization overhead, data framing, interface maintenance). This \textbf{irreducible structural overhead} is the cost of the boundary itself.
     
-    Creating a boundary between subsystems inherently consumes capacity (e.g., synchronization overhead, data framing, or interface maintenance). Therefore, the system must geometrically partition its resources such that the sum of the active subsystem capacities, plus the \textbf{irreducible structural overhead},  exhausts the total budget.
+\subsection{Reversible Encoding}
+\label{rule_reversible_encoding}
 
-    \item \textbf{Reversible Encoding:}
-    \label{rule_reversible_encoding}
-    When a partitioned system encounters a structural mismatch between subsystems (e.g., a workload that cannot divide evenly across available processors, a budget that does not split cleanly across departments, etc.), it cannot simply discard the remainder. Information erasure incurs an irreducible thermodynamic tax (Landauer's Principle \cite{landauer_irreversibility_1961}), which would compound and destabilize the system. To avoid this dissipative penalty, the system must perform \textbf{Reversible Encoding} \cite{bennett_thermodynamics_1982}: it must strictly conserve the mismatch by storing it as structural metadata (e.g., a phase shift, a residual mass limit, or an asymmetric fractional allocation).
+\textbf{Foundational Principle.} Information erasure incurs an irreducible thermodynamic tax (Landauer's Principle \cite{landauer_irreversibility_1961}), which would compound and destabilize the system if the remainder of any partition were discarded.
 
-    \item \textbf{Impedance Matching:}
-    \label{rule_impedance_matching}
-    When a system partitions its capacity, it creates nested subsystems (e.g., a core processing layer and a boundary interface). Because these subsystems operate on different geometric or functional scales, information crossing the boundary must be translated.  To minimize total Entropic Action ($S_\Phi$) across the nested hierarchy, these translations must minimize reflection loss. This requires \textbf{Impedance Matching}\cite{shannon_communication_1949}: the internal processing resistance of a subsystem must closely match the geometric bandwidth allocated to it by the partition. If there is a mismatch, the signal translation fails, information reflects at the boundary, and the resulting excess entropy causes the system to decay.
-\end{enumerate}
+\textbf{Activation Threshold.} When a system's workload cannot divide evenly across its subsystems, this structural mismatch leaves a remainder that cannot be discarded.
+
+\textbf{Operational Mandate.} The system must perform \textbf{Reversible Encoding} \cite{bennett_thermodynamics_1982}: it must strictly conserve the mismatch by storing it as structural metadata.
+
+\textbf{Structural Cost.} The metadata itself consumes capacity. A ledger that carries a rounding error must allocate bits to that remainder; a scheduling queue that carries a temporal offset must allocate slots to that offset. This storage overhead is the price of avoiding erasure.
+
+\subsection{Impedance Matching}
+\label{rule_impedance_matching}
+
+\textbf{Foundational Principle.} When a system partitions its capacity, it creates nested subsystems that operate on different geometric or functional scales. Information crossing the boundary must be translated. To minimize total Entropic Action ($S_\Phi$) \cite{meyer_ieaction_2026} across the hierarchy, these translations must minimize reflection loss (Shannon \cite{shannon_communication_1949}).
+
+\textbf{Activation Threshold.} When nested subsystems operate at different scales, any signal crossing the boundary risks reflection.
+
+\textbf{Operational Mandate.} The internal processing resistance of a subsystem must closely match the geometric bandwidth allocated to it by the partition.
+
+\textbf{Structural Cost.} If there is a mismatch, the signal translation fails, information reflects at the boundary, and the resulting excess entropy causes the system to decay. To prevent this, the system must engineer the match, consuming capacity to align internal resistance with external aperture.
+
 
 \subsection{Recursive Universality}
-Each partitioned subsystem is itself a complete persistent entity, instantiating the full six-pillar architecture on a strictly bounded fraction of the parent's capacity. If its allocated capacity is insufficient to regulate its own internal complexity it must partition again. The full architecture of a complex persistent system is therefore a \textbf{finite nesting hierarchy} (a nearly decomposable system, \textit{cf.} Simon \cite{klir_architecture_1991}), with each level's partition coefficients strictly determined by the parent level's bandwidth allocation. No level introduces free parameters; each inherits its budget from above and exhausts it completely.
+\label{sec:recursive_universality}
+These three rules apply recursively: each partitioned subsystem is itself a persistent entity, instantiating the full 
+six-pillar architecture on its fraction of the parent's capacity. If its allocated capacity is insufficient to regulate its own internal complexity it must partition again. The full architecture of a complex persistent system is therefore a \textbf{finite nesting hierarchy} (a nearly decomposable system, \textit{cf.} Simon \cite{klir_architecture_1991}), with each level's partition coefficients strictly determined by the parent level's bandwidth allocation. No level introduces free parameters; each inherits its budget from above and exhausts it completely.
 
-This recursion is universal: a multicellular organism partitions metabolic bandwidth across organ systems; a corporation partitions operational capacity across departments. In every domain, stability requires that the partition coefficients perfectly satisfy the global constraint-satisfaction problem of nested persistence. This paper applies these principles strictly to the quantum vacuum; their application to macroscopic domains is the subject of future work.
+This recursion is universal: a multicellular organism partitions metabolic bandwidth across organ systems; a corporation partitions operational capacity across departments. In every domain, the partition coefficients must satisfy the global solvency constraint of nested persistence.  This paper applies these principles strictly to the quantum vacuum; their application to macroscopic domains is the subject of future work.
