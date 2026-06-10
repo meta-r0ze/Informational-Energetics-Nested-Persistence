@@ -1,5 +1,5 @@
 \CatchFileBetweenTags{\AlphaInvVal}{constants.tex}{AlphaInvVal}
-\CatchFileBetweenTags{\CompMAR}{constants.tex}{CompMAR}
+\CatchFileBetweenTags{\AlphaInvMAR}{constants.tex}{AlphaInvMAR}
 \CatchFileBetweenTags{\MeMeVPrint}{constants.tex}{MeMeVPrint}
 
 % CAP
@@ -90,7 +90,7 @@ D_{eff} = D + \frac{\chi}{4\pi} \approx 4.15915
 \end{equation}
 
 \paragraph{Thermodynamic Noise (Temporal Correction)}
-We must also subtract the energy ``lost'' to the substrate's resolution floor. Under \textbf{Rule 2: Reversible Encoding}, the \textbf{Margin Impedance} ($Z_{MAR} \approx \CompMAR$) defines the minimum resolvable energy unit. Because the vacuum supports exactly 3 fermion generations (the available residual degrees of freedom: $\sigma - \chi = 3$), this noise is partitioned across these three available ``signal slots.'' To maintain global solvency, the physical VEV must be reduced by this noise amplitude:
+We must also subtract the energy ``lost'' to the substrate's resolution floor. Under \textbf{Rule 2: Reversible Encoding}, the \textbf{Margin Impedance} ($Z_{MAR} \approx \AlphaInvMAR$) defines the minimum resolvable energy unit. Because the vacuum supports exactly 3 fermion generations (the available residual degrees of freedom: $\sigma - \chi = 3$), this noise is partitioned across these three available ``signal slots.'' To maintain global solvency, the physical VEV must be reduced by this noise amplitude:
 \begin{equation}
 \delta_{noise} = \left( 1 - \frac{Z_{MAR}}{\sigma - \chi} \right)
 \end{equation}
@@ -105,7 +105,7 @@ Substituting the derived values:
 \begin{equation}
 \begin{split}
 v_{phys} &= (\HiggsVEVStepOneVal) \cdot \\ 
-&\left( 1 + \frac{\alpha}{4.159} \right) \cdot \left( 1 - \frac{\CompMAR}{3} \right) \\
+&\left( 1 + \frac{\alpha}{4.159} \right) \cdot \left( 1 - \frac{\AlphaInvMAR}{3} \right) \\
 & \approx \mathbf{\HiggsVEVVal}
 \end{split}
 \end{equation}
