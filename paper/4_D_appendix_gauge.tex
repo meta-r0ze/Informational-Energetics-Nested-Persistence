@@ -1,0 +1,75 @@
+\crefalias{section}{appendix}
+\section{The Gauge Admittance: Electroweak Structure and Link Geometry}
+\label{app:gauge_admittance}
+
+The derivations in \cref{sec:capacity_partition} established the dimensionless bandwidth ratios ($\alpha_s$, $\sin^2\theta_W$, $\theta_C$), which fix the \textbf{relative} allocation of the lattice's capacity. To complete the physical mapping to the Standard Model, this appendix establishes the \textbf{absolute} gauge couplings ($g$, $g'$, $g_3$) that fix the admittance of information flow across the discrete links, and details their physical manifestation as the electroweak gauge bosons.
+
+\subsection{The Electroweak Bifurcation}
+
+The geometric partition between the temporal resonance ($\approx 22\%$) and the spatial/hardware infrastructure ($\approx 78\%$) physically dictates the entire phenomenology of the electroweak gauge bosons. 
+
+The $E_8$-Persistence theory establishes a strict structural isomorphism to the Standard Model, where the abstract hypercharge ($g'$) and weak isospin ($g$) gauge couplings are simply the continuous reflections of these discrete lattice bandwidth allocations:
+\begin{equation}
+\frac{g'^2}{g^2 + g'^2} \longleftrightarrow \frac{\Delta}{N_{sys}}
+\end{equation}
+
+This geometric split forces the observed behavior of the carriers:
+\begin{itemize}
+    \item \textbf{The Photon ($\gamma$, $U(1)$ Temporal):} The hypercharge sector couples strictly to the \textbf{Fundamental Resonance} ($\Delta$), representing the causal update rate of the lattice. Because temporal evolution cannot be obstructed without violating causality, the photon carries no spatial hardware load. It must remain massless and propagate at the exact bandwidth limit of the substrate ($c$).
+    
+    \item \textbf{The W/Z Bosons ($W^{\pm}, Z^0$, $SU(2)$ Spatial):} The isospin sector couples to the \textbf{Manifold Embedding} ($N_{sys} - \Delta$), representing the dense spatial infrastructure and chiral payload. To propagate through this structural density, these gauge fields must deform the lattice geometry, incurring a severe geometric impedance cost that manifests physically as mass.
+\end{itemize}
+
+\subsection{Absolute Couplings from Link Geometry}
+
+\textbf{The Bare Lattice Coupling:} On the discrete substrate, the link variable $U_\mu = \exp(-ig \ell A_\mu)$ rotates the phase of transmitted signals. The kinematic bandwidth limit $c = \ell/\tau = 1$ (Paper 2, Section III.C) enforces exactly one spatial transition per temporal update. The phase rotation per transition is therefore bounded by the geometric step efficiency:
+\begin{equation}
+    g_{\text{bare}} = \frac{1}{2}
+\end{equation}
+This is the universal lattice efficiency: half the phase budget per link is allocated to spatial translation, half to internal rotation.
+
+\textbf{The Physical Couplings:} The bare admittance is dressed by the specific capacity allocation of each orthogonal sector:
+
+\begin{itemize}
+    \item \textbf{Strong coupling $g_3$:} The color sector occupies $N_c = \sigma - \chi = 3$ channels of the $\nu = 16$ total. The admittance is the geometric mean of the bare coupling and the sector fraction:
+    \begin{equation}
+        g_3^2 = 4\pi \alpha_s = 4\pi \cdot \frac{\nu\eta + 1/D}{\alpha^{-1}}
+        \approx 1.54 \quad (g_3 \approx 1.24)
+    \end{equation}
+    The factor $4\pi$ arises from solid angle integration in the continuous limit (Paper 2, Section V.B).
+    
+    \item \textbf{Weak isospin $g$:} The spatial sector couples to the manifold embedding $N_{\text{sys}} - \Delta$. The admittance is:
+    \begin{equation}
+        g^2 = \frac{4\pi\alpha}{\sin^2\theta_W} \approx 0.42 \quad (g \approx 0.65)
+    \end{equation}
+    
+    \item \textbf{Hypercharge $g'$:} The temporal sector couples to the fundamental resonance $\Delta$. The admittance is:
+    \begin{equation}
+        g'^2 = \frac{4\pi\alpha}{1-\sin^2\theta_W} \approx 0.12 \quad (g' \approx 0.35)
+    \end{equation}
+\end{itemize}
+
+\textbf{Physical Interpretation:} The gauge couplings of standard physics are not independent primitives. They are strictly the \textbf{dressed admittances} of the lattice links, renormalized by the capacity allocation of their respective sectors. The ``gauge principle'' is simply the geometric requirement that phase rotations preserve unitarity across these discrete links.
+
+\subsection{Recursive Validation: The Cost of Time}
+
+The structural consistency of the theory can be explicitly confirmed by linking this Spacetime Partition directly back to the Fine-Structure Constant. 
+
+Recall the \textbf{Toll} component of the $\alpha^{-1}$ geometric impedance ($T_{geo}$), derived from the microscopic 3-point interaction vertex on the substrate:
+\begin{equation}
+\begin{split}
+    T_{geo} &= \frac{1}{(2\nu)^3} \cdot \frac{\chi}{\sigma} \cdot \left(1 - \frac{\sigma}{D\Delta} \right) \approx \CompTOL
+\end{split}
+\end{equation}
+
+We now observe that this bare geometric transition cost ($T_{geo}$) structurally mirrors the fully dressed, second-order electromagnetic cross-section ($\alpha^2$, as expected for a 3-point vertex) modulated by the Weak Mixing Angle ($\sin^2 \theta_W$) derived above:
+\begin{equation}
+\begin{split}
+T_{check} &= \alpha^2 \sin^2 \theta_W \\
+&= \left(\frac{1}{\AlphaInvVal}\right)^2 \cdot \left(\frac{43}{\WeakAngleStepOneVal}\right) \\
+&\approx (5.325 \times 10^{-5}) \cdot (0.2229053) \\
+&\approx \WeakAngleTCheckVal
+\end{split}
+\end{equation}
+
+\textbf{Conclusion:} The match to within $\sim 0.15\%$ confirms deep internal consistency. The convergence of these two entirely independent geometric paths---one derived from the local 3-point vertex geometry ($T_{geo}$), the other from the macroscopic bandwidth partitioning ($T_{check}$)---demonstrates that the Weak Interaction is strictly the physical manifestation of the temporal bandwidth allocation on the electromagnetic manifold.

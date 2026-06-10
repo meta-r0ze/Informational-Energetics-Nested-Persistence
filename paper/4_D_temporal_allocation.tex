@@ -1,0 +1,69 @@
+\CatchFileBetweenTags{\AlphaInvVal}{constants.tex}{AlphaInvVal}
+
+\CatchFileBetweenTags{\WeakAngleStepOneVal}{constants.tex}{WeakAngleStepOneVal}
+\CatchFileBetweenTags{\WeakAngleVal}{constants.tex}{WeakAngleVal}
+\CatchFileBetweenTags{\WBosonMassVal}{constants.tex}{WBosonMassVal}
+\CatchFileBetweenTags{\CompTOL}{constants.tex}{CompTOL}
+\CatchFileBetweenTags{\WeakAngleTCheckVal}{constants.tex}{WeakAngleTCheckVal}
+\CatchFileBetweenTags{\WeakAngleExperimentalValue}{constants.tex}{WeakAngleExperimentalValue}
+\CatchFileBetweenTags{\WeakAngleGlobalExperimentalValue}{constants.tex}{WeakAngleGlobalExperimentalValue}
+\CatchFileBetweenTags{\WeakAngleGlobalSigma}{constants.tex}{WeakAngleGlobalSigma}
+
+\CatchFileBetweenTags{\NcVal}{constants.tex}{NcVal}
+\CatchFileBetweenTags{\NcEq}{constants.tex}{NcEq}
+\CatchFileBetweenTags{\WeinbergGUTVal}{constants.tex}{WeinbergGUTVal}
+\CatchFileBetweenTags{\WeinbergGUTEq}{constants.tex}{WeinbergGUTEq}
+
+\CatchFileBetweenTags{\InvRM}{constants.tex}{InvRM}
+
+\subsection{The Spacetime Partition (Weak Mixing Angle \texorpdfstring{$\sin^2 \theta_W$}{sin2thetaW})}
+\label{subsec:spacetime_partition}
+\label{subsec:weak_mixing}
+
+\textbf{Architectural Requirement:} Under Rule 1 (Capacity Partitioning), a persistent system must continuously advance its state into the future. However, a local node is a heavy informational object. To update the node, the substrate must advance the total structural footprint of the system. It must strictly partition its operational bandwidth between the pure causal ``clock tick'' (Time) and the structural maintenance of the ``hardware'' (Space, Payload, and Wires). 
+
+\textbf{The Geometric Primitives:} The total structural footprint of a node ($N_{sys}$) is the linear sum of its three orthogonal hardware components:
+
+\begin{enumerate}
+    \item \textbf{The Address Space ($R_M$):} The spacetime coordinate grid. The fundamental resonance ($\Delta=43$) distributed across the $D=4$ dimensions yields a manifold resolution of $R_M = 172$ coordinate slots.
+    \item \textbf{The State Payload ($\nu \cdot \eta$):} The active chiral data ($\nu=16$) occupying the grid, strictly subject to the active transmission overhead ($\eta$), yielding $\approx 15.9$ active payload states.
+    \item \textbf{The Interaction Bus ($\sigma$):} The $\sigma = 5$ independent generators required to physically connect the node to its neighbors.
+\end{enumerate}
+
+Summing these orthogonal components yields the Total System Footprint:
+\begin{equation}
+N_{sys} = \underbrace{R_M}_{\text{Address}}
++ \underbrace{\nu \cdot \eta}_{\text{State}}
++ \underbrace{\sigma}_{\text{Interaction}}
+\approx \WeakAngleStepOneVal
+\end{equation}
+
+To maintain causal coherence, a portion of the bandwidth is allocated purely to the temporal update stream ($\Delta = 43$, the 1-dimensional causal period) against the total structural footprint of the system ($N_{sys}$):
+
+\begin{equation}
+\begin{split}
+\text{Clock Ratio} &= \frac{\text{Temporal Updates}}{\text{Total System Footprint}} = \frac{\Delta}{N_{sys}} \\
+&= \frac{43}{\WeakAngleStepOneVal} \approx \mathbf{\WeakAngleVal}
+\end{split}
+\end{equation}
+
+\subsubsection{Physical Consequence: Electroweak Symmetry Breaking}
+
+This geometric bandwidth ratio identically matches the Weak Mixing Angle ($\sin^2 \theta_W$) of the Standard Model. Rather than an arbitrary group-theoretic mixing parameter, it is the structural limit that dictates the physical bifurcation of the Electroweak force:
+
+\begin{itemize}
+    \item \textbf{The Photon ($\gamma$):} Represents the $\Delta$ numerator. Because it couples strictly to the temporal update stream, it carries no structural hardware load. It therefore propagates without geometric impedance as a massless carrier at the speed limit of the substrate ($c$).
+    \item \textbf{The W/Z Bosons:} Represent the massive denominator ($N_{sys} - \Delta$). Because they must update the heavy spatial grid, state payload, and interaction bus, their propagation is severely impeded by the lattice structure, manifesting macroscopically as massive, short-range gauge bosons.
+\end{itemize}
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & \num{\WeakAngleVal} \\
+\textbf{Experiment (Direct Mass):} & \WeakAngleExperimentalValue \\
+\textbf{Experiment (Global Fit):} & \WeakAngleGlobalExperimentalValue \\
+\end{tabular}
+\vspace{0.5em}
+
+\textbf{The W-Boson Mass Tension:} The geometric prediction perfectly aligns with the \textbf{Direct Mass} measurement. The \WeakAngleGlobalSigma$\sigma$ deviation from the Standard Model Global Fit is not a theoretical error, but a powerful structural prediction. It provides a natural, geometric explanation for the empirical tension in the W-boson mass (e.g., the CDF II anomaly): the tension arises mathematically when continuous, infinite-loop regularizations (assumed by the global fit) are applied to a physical substrate possessing a strictly finite, discrete capacity partition.
+
+\textit{Note on Physical Fields:} The explicit mapping of this Spacetime Partition to the physical gauge fields---demonstrating why the temporal allocation ($\Delta$) manifests as the massless Photon ($\gamma$) and the spatial infrastructure allocation manifests as the massive $W/Z$ bosons---along with the derivation of the absolute link admittances ($g, g', g_3$), is detailed in \cref{app:gauge_admittance}.

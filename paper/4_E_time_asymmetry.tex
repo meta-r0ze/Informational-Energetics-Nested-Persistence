@@ -1,0 +1,123 @@
+\subsection{Jarlskog Invariant \texorpdfstring{$J$}{J}: The Projection Frustration}
+\label{subsec:jarlskog}
+
+\CatchFileBetweenTags{\JarlskogVal}{constants.tex}{JarlskogVal}
+\CatchFileBetweenTags{\JarlskogExperimentalValue}{constants.tex}{JarlskogExperimentalValue}
+\CatchFileBetweenTags{\JarlskogSigma}{constants.tex}{JarlskogSigma}
+\CatchFileBetweenTags{\CompTOL}{constants.tex}{CompTOL}
+
+\subsubsection{The Architectural Requirement}
+Under \textbf{Rule 2: Reversible Encoding}, the irreducible geometric mismatch of projecting 5-fold symmetry onto a 4-fold manifold cannot be erased; it must be stored as the measurable thermodynamic friction of the causal projection.
+
+The \textbf{Toll} pillar of the Capacity Partition is the \textbf{Causal Toll}: the irreducible thermodynamic friction of mapping the 5-fold internal symmetry of the lattice ($\sigma=5$) onto the 4-dimensional spacetime manifold ($D=4$). In the Standard Model, this manifests as the Jarlskog Invariant ($J \approx 3 \times 10^{-5}$), which quantifies CP violation but whose magnitude has no structural explanation.
+
+We identify $J$ geometrically as this exact \textbf{Projection Frustration}. Time asymmetry arises directly from the interaction between the intrinsic entropic cost of state updates and the geometry of this projection. We define this using three established, parameter-free invariants of the substrate:
+
+These three factors act on geometrically orthogonal subspaces and therefore combine multiplicatively: $T_{geo}$ operates on channel combinations (combinatorial phase space), $\phi^2$ on geometric projection (area deficit), and $\eta$ on bulk propagation (volumetric overhead). By the Entropic Balance Sheet (Paper 1, Section II.B.3), orthogonal contributions to dissipation combine via product, not sum. Any additive combination would violate dimensional consistency: all three factors are dimensionless, but their physical origins are distinct and non-interacting.
+
+\begin{enumerate}
+    \item \textbf{The Base Toll ($T_{geo}$):} The entropic cost of a single causal state transition (the Toll pillar) is determined by the Total Node Capacity ($N = \nu_{\text{Space}} + \nu_{\text{Internal}} = 16 + 16 = 32$) and the coupling to the topological boundary:
+    \begin{equation}
+        T_{geo} = \frac{1}{N^3} \cdot \frac{\chi}{\sigma} \cdot \left(1 - \frac{\sigma}{D\Delta}\right) \approx 1.185 \times 10^{-5}
+    \end{equation}
+    The cubic dependence ($1/N^3$) counts the minimal three-point vertex configurations; physically, this manifests as the 3-body phase space of Weak decays.
+    
+    \item \textbf{The Projection Frustration ($\phi^2$):} The internal interaction space is characterized by 5-fold symmetry ($\sigma=5$), which geometrically manifests the non-crystallographic $H_4$ Coxeter group (the 600-cell). However, a fundamental theorem of crystallography dictates that 5-fold icosahedral symmetries cannot perfectly, periodically tile a 4D discrete lattice without introducing topological defects. When projecting this $H_4$ geometry onto the periodic 4-dimensional causal manifold, the eigenvalue of the projection matrix strictly defines the geometric area deficit (frustration). This eigenvalue is exactly $\phi^2 = ((1+\sqrt{5})/2)^2 \approx 2.618$, the squared Golden Ratio. This is a rigorous consequence of $H_4$ Coxeter geometry \cite{moody_quasicrystals_1993}.
+    
+    \item \textbf{The Coordinate Overhead ($\eta$):} Because this frustration signal is a volumetric effect that propagates through the bulk lattice before manifesting at the 4D boundary, it is subject to the Coordinate Overhead ($\eta$).
+\end{enumerate}
+
+\subsubsection{The Frustration Formula}
+The Jarlskog Invariant is the fundamental causal Toll amplified by the Projection Frustration. The frustration acts as a geometric multiplier: every temporal state transition occurs within the constrained 4D projection, and the $\phi^2$-scaled area deficit accumulates as additional irreducible entropic cost.
+
+\begin{equation}
+\begin{split}
+    J_{geo} &= (\phi^2 \cdot \eta) \cdot T_{geo} \\
+    &= (2.61803 \cdot 0.994186) \cdot \CompTOL \\
+    &\approx \JarlskogVal
+\end{split}
+\end{equation}
+
+No other combination is permitted: $T_{geo}$ is the irreducible minimum; $\phi^2$ is the geometric deficit; $\eta$ is the bulk propagation correction. The product structure is forced by subspace orthogonality; the numerical value is fixed by the invariant set $\{\Delta=43, \nu=16, \sigma=5, \chi=2\}$.
+
+\subsubsection{Validation: CP Violation}
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & $\JarlskogVal$ \\
+\textbf{Experiment:} & \JarlskogExperimentalValue \\
+\textbf{Accuracy:}   & $\JarlskogSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}
+
+\subsubsection{Physical Interpretation: Projection Frustration and CP Violation}
+The CP violation is geometrically analogous to a pentagonal prism casting a shadow: 5-fold symmetry projected onto a 2D surface loses perfect symmetry. The $E_8$ lattice casts a ``Golden Shadow'' onto 4D spacetime, the Jarlskog Invariant, the geometric signature of Time's directional flow.
+
+\begin{itemize}
+    \item \textbf{Why CP violation is weak:} The geometric frustration ($\phi^2 \approx 2.6$) amplifies the Toll, but the base transition cost ($T_{geo} \approx 10^{-5}$) is inherently small due to the efficiency of the weak aperture.
+    
+    \item \textbf{Why matter dominates:} Without CP violation ($J=0$), the universe would be perfectly symmetric and annihilate. The non-zero $J$ creates a topological bias favoring matter over antimatter, which is subsequently amplified by cosmological expansion.
+    
+    \item \textbf{The Baryogenesis Gap:} While $J_{geo}$ matches the Quark Sector mixing ($J_{CKM}$), this magnitude is insufficient to explain the observed baryon asymmetry ($\eta_B \sim 10^{-9}$) through CKM physics alone. The framework structurally requires additional CP violation in the Lepton Sector (PMNS matrix); its geometric derivation is beyond the scope of this paper.
+\end{itemize}
+
+
+\subsection{Corollary: The Strong CP Prohibition (\texorpdfstring{$\theta_{QCD} \equiv 0$}{theta\_QCD = 0})}
+\label{sec:strong_cp_prohibition}
+
+While the primary objective of this section is the numerical derivation of the partition coefficients, the geometric isolation of the Capacity Partition yields an immediate, structural resolution to a major open problem in physics: the Strong CP problem. We briefly outline this topological prohibition here, as it demonstrates the predictive power of the partitioned architecture.
+
+In standard QFT, the QCD Lagrangian permits a CP-violating topological term, $g^2\theta_{QCD}/(32\pi^2) G\tilde{G}$, where $\theta$ is an arbitrary angular parameter. Experimental limits on the neutron electric dipole moment (nEDM), however, constrain $|\theta_{QCD}| < 10^{-10}$. Standard physics offers no structural mechanism for this extreme fine-tuning, motivating \textit{ad hoc} additions like dynamical relaxation via the Peccei-Quinn mechanism and the axion.
+
+The $E_8$-Persistence theory resolves the Strong CP problem by \textbf{Topological Prohibition}. The interaction subspace that hosts the Strong Force ($\sigma-\chi=3$) is geometrically orthogonal to the spacetime boundary ($\chi=2$) where topological winding numbers are defined. This prohibition is enforced by two independent and mutually reinforcing information-theoretic principles:
+
+\subsubsection{Argument 1: The Entropic Ground State Constraint}
+A non-zero $\theta_{QCD}$ requires the gauge field to possess a topological winding number around the spacetime manifold ($\pi_3(S^3)$). On a discrete, finite-capacity substrate, this imposes two prohibitive entropic costs:
+\begin{enumerate}
+    \item \textbf{Specification Cost:} Because the $E_8$ substrate is discrete, any non-zero phase angle must manifest as a specific rational geometric ratio of the substrate's integer invariants (as demonstrated in Sections \ref{subsec:weak_mixing} and \ref{subsec:cabibbo}). Encoding an arbitrary, continuous parameter $\theta \in[0, 2\pi)$ would require infinite precision, carrying an unbounded Shannon entropy that the finite node capacity ($\nu=16$) cannot physically support.
+    \item \textbf{Coupling Cost:} For a discrete winding number to be meaningful, the color field (residing strictly in the internal $\sigma-\chi=3$ subspace) would have to maintain a persistent correlation with the spacetime boundary ($\chi=2$ surface). Because these sectors are geometrically orthogonal, this cross-sector coupling requires continuous, irreducible informational overhead to maintain against vacuum decoherence.
+\end{enumerate}
+The decoupled state where $\theta_{QCD}$ is geometrically undefined entirely avoids both entropic costs ($S_{spec}=0$, $S_{couple}=0$). By the Principle of Least Entropic Action, the vacuum strictly relaxes to the state of minimal information content, the geometric ground state where the winding number simply does not exist:
+\begin{equation}
+    \theta_{QCD} \equiv 0 \quad \text{(Entropic Ground State)}
+\end{equation}
+
+\subsubsection{Argument 2: The Unitary CP Budget and Lorentzian Projection}
+The lattice's finite capacity imposes a strict conservation law on time-reversal symmetry breaking, quantified by the Jarlskog invariant, $J$ (which serves as the \textbf{Toll} pillar of the Capacity Partition, derived in \cref{subsec:jarlskog}). 
+
+The $E_8 \to D_4 \oplus D_4$ projection assigns the Lorentzian metric signature (and thus the active temporal generator $\partial_t$) exclusively to the spacetime sector. Consequently, the geometric structure allocates the entire CP violation capacity to the chiral spacetime boundary ($\chi=2$), where it manifests as the CKM phase ($J \approx 3 \times 10^{-5}$), consuming the available temporal budget (as quantified by the Jarlskog invariant derived in \cref{subsec:jarlskog}).
+
+The internal symmetry space ($\sigma-\chi=3$) that hosts the Strong Force is strictly Euclidean; it lacks a projection onto the temporal boundary. The color sector is therefore \textbf{informationally isolated from the Arrow of Time}. Because it possesses no temporal generator, its contribution to the CP budget must be identically zero:
+\begin{equation}
+    J_{strong} \equiv 0 \quad \implies \quad \theta_{QCD} = 0
+\end{equation}
+
+These two arguments are logically independent: either the infinite-precision specification cost (Argument 1) or the geometric isolation of the color sector from temporal generators (Argument 2) would individually prohibit a non-zero $\theta_{\mathrm{QCD}}$. Their convergence from distinct architectural pillars (Toll and Protocol/Map, respectively) demonstrates that the prohibition is overdetermined by the substrate geometry.
+
+\subsubsection{Comparison to the Axion Mechanism}
+This geometric resolution is fundamentally different from the dynamical relaxation proposed by the Peccei-Quinn mechanism. The two solutions are mutually exclusive, as summarized in \cref{tab:cp_solutions}.
+
+\begin{table}[htbp]
+\centering
+\caption{Strong CP: Axion vs. Geometric Prohibition}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Feature} & \textbf{Peccei-Quinn} & \textbf{$E_8$-Persistence} \\
+\midrule
+Mechanism & Dynamic relaxation & Topological prohibition \\
+New Particle & Yes (the Axion) & No \\
+New Symmetry & Yes ($U(1)_{PQ}$) & No \\
+$\theta_{QCD}$ value & Dynamically driven & Geometrically fixed ($\equiv 0$) \\
+Testable via & Axion search & Null results in axion search \\
+\bottomrule
+\end{tabular}
+\label{tab:cp_solutions}
+\end{table}
+
+\subsubsection{Falsifiable Predictions}
+This geometric prohibition generates two hard-falsifiable predictions:
+\begin{enumerate}
+    \item \textbf{No QCD Axion:} Because $\theta_{QCD}=0$ is the geometric ground state, no dynamical relaxation mechanism is needed. The QCD axion, as proposed to solve the Strong CP problem, is therefore predicted not to exist. A confirmed discovery of the QCD axion with its theoretically expected couplings would explicitly falsify this framework. (\textit{Note: This does not exclude other axion-like particles (ALPs) whose existence is not tied to the Peccei-Quinn mechanism.})
+    
+    \item \textbf{Zero Strong-Sector nEDM:} The contribution to the neutron electric dipole moment from $\theta_{QCD}$ is exactly zero. The only non-zero contribution arises from the CKM phase (a weak interaction effect), calculated to be $d_n^{weak} \sim 10^{-32} \, e\cdot\text{cm}$ \cite{pospelov_electric_2005}. Given the current experimental limit of $|d_n| < 1.8 \times 10^{-26} \, e\cdot\text{cm}$ \cite{abel_measurement_2020}, any confirmed measurement of $d_n > 10^{-30} \, e\cdot\text{cm}$ would constitute a major deviation from the Standard Model background and would falsify the $E_8$-Persistence Theory.
+\end{enumerate}

@@ -1,0 +1,66 @@
+\CatchFileBetweenTags{\AlphaInvVal}{constants.tex}{AlphaInvVal}
+\CatchFileBetweenTags{\AlphaSVal}{constants.tex}{AlphaSVal}
+\CatchFileBetweenTags{\AlphaSExperimentalValue}{constants.tex}{AlphaSExperimentalValue}
+\CatchFileBetweenTags{\AlphaSSigma}{constants.tex}{AlphaSSigma}
+
+\subsection{Capacity \& The Coordinate Overhead (\texorpdfstring{$\eta$}{eta})}
+
+Under Rule 1 (Capacity Partitioning), splitting the $\nu = 16$ budget into orthogonal subsystems creates multiple independent signal paths. After the partition, signals must traverse a shared coordinate grid to reach their designated subsystem. This coordination requires a frame delimiter that separates control information from payload. On a discrete lattice, this delimiter is the coordinate origin: the site occupied by the reference frame that cannot simultaneously carry physical state information. 
+
+This overhead applies exclusively to \textit{active signal transmission} over the bulk manifold volume (such as the channel saturation $\alpha_s$). Quantities defined by boundary topology (1-forms, Wilson Loops, $\chi$) do not reference the internal coordinate grid and are strictly unattenuated by $\eta$.
+
+The substrate's maximum address space per cycle is the Manifold Resolution $R_M = D \times \Delta = 4 \times 43 = 172$. The origin consumes exactly one slot from this finite budget, leaving $N_{\text{addressable}} = R_M - 1 = 171$ addressable payload sites. No other allocation is permitted:
+
+\begin{itemize}
+    \item $N_{\text{addressable}} = 172$ (no overhead): Requires a continuous manifold with infinite information density, violating Finiteness.
+    \item $N_{\text{addressable}} = R_M - k$ for integer $k > 1$: Requires $k$ independent reference frames. The Closure Constraint forbids external references; only the self-referential origin is permitted.
+    \item $N_{\text{addressable}} = 0$ (total overhead): No addressable capacity remains; the substrate cannot process information.
+    \item $\eta$ dependent on $\Delta$: The temporal resonance is a periodic cycle with no endpoints; it requires no origin fixing. Applying $\eta$ to $\Delta$ would double-count the structural cost.
+\end{itemize}
+
+The Coordinate Overhead is therefore the strict geometric ratio of addressable payload capacity to total hardware limit:
+\begin{equation}
+\label{eq:coordinate_overhead}
+\begin{split}
+    \eta &\equiv \frac{N_{\text{addressable}}}{N_{\text{total}}} = \frac{R_M - 1}{R_M} = \frac{171}{172} \\
+         &\approx \InvCoordinateOverhead
+\end{split}
+\end{equation}
+
+The numerator captures the state's information load (Capacity and Protocol); the denominator is the full Geometric Impedance of the substrate, incorporating all six pillars.
+
+\subsection{Capacity Saturation (The Strong Coupling \texorpdfstring{$\alpha_s$}{alpha\_s})}
+\label{subsec:saturation_ratio}
+
+The Fine-Structure Constant ($\alpha^{-1}$) was derived as the fundamental geometric impedance of the vacuum, the baseline resistance to a single-channel transmission. When a subsystem must transmit a fully confined state (such as with the capacity parition), it imposes a informational load on the network. The \textbf{Confined Coupling} ($\alpha_s$) emerges as the transmission efficiency of this state: the exact ratio of the saturated information load to the baseline geometric impedance of the vacuum:
+
+\begin{enumerate}
+    \item \textbf{Chiral Saturation ($\nu \cdot \eta$):} The defect must actively drive all $\nu=16$ chiral channels to maintain internal coherence. Because this confined state represents active payload propagating through the discrete bulk manifold, it incurs the Coordinate Overhead ($\eta$).
+    \item \textbf{Isotropic Flux ($1/D$):} The defect must anchor to the 4-dimensional spatial grid. By the Homogeneity constraint, a single unit of flux must distribute equally across the $D=4$ orthogonal spacetime directions, yielding a normalization factor of strictly $1/D = 1/4$.
+\end{enumerate}
+
+The maximum operational efficiency of this confined state is the ratio of this Total Active State Load to the Geometric Impedance ($\alpha^{-1}$):
+
+\begin{equation} \label{eq:alphas_saturation}
+\alpha_s = \frac{\text{State Load}}{\text{Impedance}} 
+= \frac{\nu \cdot \eta + 1/D}{\alpha^{-1}}
+\end{equation}
+
+\subsection{Verification: The Strong Coupling at the Z-Pole}
+
+The strong coupling ($\alpha_s$) is not a static number; it ``runs'' depending on the energy scale of the interaction. To test our geometric derivation, we must evaluate it at the appropriate physical limit.  In experimental physics, the saturation threshold is observed as the Electroweak Resonant Scale (the Z-Pole, $M_Z$). This is the specific physical energy density where the vacuum's internal capacity is fully ``illuminated'' before macroscopic spatial dilution (running) sets in. 
+
+Substituting the geometric invariants yields the exact physical magnitude of the Strong Coupling at this saturation limit:
+
+\begin{equation}
+\alpha_s(M_Z) = \frac{16 \cdot \eta + 1/4}{\alpha^{-1}}
+\approx \mathbf{\AlphaSVal}
+\end{equation}
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & \AlphaSVal \\
+\textbf{Experiment:} & \AlphaSExperimentalValue \\
+\textbf{Accuracy:}   & $\AlphaSSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}

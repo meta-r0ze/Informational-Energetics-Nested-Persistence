@@ -1,0 +1,22 @@
+\CatchFileBetweenTags{\InvCoordinateOverhead}{constants.tex}{InvCoordinateOverhead}
+
+\section{System 4: The Gauge Partition}
+\label{sec:capacity_partition}
+
+Under Rule 1 (\textbf{Capacity Partitioning}), a discrete substrate with finite node capacity ($\nu=16$) faces an immediate structural bottleneck: if spatial translations, temporal updates, and internal force mediation attempt to utilize the channels simultaneously, the local state space overflows. This results in Causal Aliasing: when a node attempts to process spatial translations ($D=4$), temporal updates ($\Delta=43$), and internal force mediation ($\sigma=5$) through the same finite channel set, the total state transitions per cycle exceed the $\nu=16$ capacity. The local causal structure loses track of which information belongs to which process, and the node decoheres.
+
+To persist, the capacity must be split into non-overlapping fractional bandwidths for each orthogonal demand, creating specialized subsystems to manage them. This routing problem defines \textbf{System 4: The Gauge Partition}. When evaluated, these structural limits identically match the core empirical parameters of the Standard Model gauge sector:
+
+\begin{enumerate}
+    \item \textbf{Capacity: The Chiral Bandwidth} ($\nu = 16$). The $E_8$ substrate possesses 16 chiral degrees of freedom. This acts as the absolute processing budget that must be distributed across all tasks without overflow. Because the partition requires a shared coordinate grid, this budget is subject to the Coordinate Overhead ($\eta = 171/172$) whenever signals traverse the bulk manifold. As every channel is active the impedance load becomes $\alpha_s$.
+
+    \item \textbf{Map: The Gauge Topology} ($\sigma = 5, \chi = 2$). To embed a distinct topological defect into the substrate, the system must map its internal interaction generators (rank $\sigma = 5$) and localized boundaries ($\chi = 2$) onto the available capacity. These invariants define the number of distinct interaction apertures requiring bandwidth.
+    
+    \item \textbf{Protocol: The Spacetime Partition} ($\sin^2\theta_W$). The bandwidth fraction allocated to temporal updates versus spatial structure that prevents serialization deadlock.
+
+    \item \textbf{Governor: Field Rigidity} ($\beta_0$). The geometric resistance to gauge field deformation that prevents partition ratios from warping under perturbation.
+    
+    \item \textbf{Toll: Projection Frustration} ($J$). The irreducible geometric mismatch cost of mapping 5-fold symmetry onto 4-fold spacetime.
+    
+    \item \textbf{Margin: Minimum Resolvable Impedance} ($y_e$). The structural noise floor below which vacuum fluctuations erase distinguishable states. (The Electron Yukawa coupling explicit derivation is deferred to \cref{sec:resonant_interface}, where it emerges as the minimum resolvable impedance of the resonant interface.)
+\end{enumerate}
