@@ -141,8 +141,8 @@ REFS = {
     ),
 
     "mh": MeasuredVal(
-        125.25, 
-        0.17,
+        125.20, 
+        0.11,
         2, 
         "GeV",
         "navas_review_2024"
@@ -279,7 +279,7 @@ def to_latex_sci(num, precision=4, unit=""):
         return f"{num:.{precision}f}".rstrip('0').rstrip('.')
     if unit != "":
         return f"{mantissa:.{precision}f}e{exponent}"
-    return f"{mantissa:.{precision}f} \\times 10^{{{exponent}}}"
+    return f"{mantissa:.{precision}f} \\cdot 10^{{{exponent}}}"
 
 def to_latex_sci_with_err(val, err, precision=4):
     """
@@ -293,7 +293,7 @@ def to_latex_sci_with_err(val, err, precision=4):
     mantissa_val = val / (10**exponent)
     mantissa_err = err / (10**exponent)
     
-    return f"({mantissa_val:.{precision}f} \\pm {mantissa_err:.{precision}f}) \\times 10^{{{exponent}}}"
+    return f"({mantissa_val:.{precision}f} \\pm {mantissa_err:.{precision}f}) \\cdot 10^{{{exponent}}}"
 
 def print_section(title, latex_mode=False):
     if latex_mode: return
@@ -552,7 +552,7 @@ def main():
     # --- Universal Manifold Friction ---
     # Any integer capacity (N) projected onto the spacetime manifold (D*Delta)
     # experiences a texture loss/friction defined by the inverse volume.
-    MANIFOLD_FRICTION = 1.0 - (1.0 / (D * DELTA)) # ~0.994186
+    COORDINATE_OVERHEAD = 1.0 - (1.0 / (D * DELTA)) # ~0.99
 
     if LATEX_MODE:
         # Output basic invariants as tags
@@ -561,6 +561,7 @@ def main():
         print(f"%<*InvLSubstrate>{L_SUBSTRATE}%</InvLSubstrate>")
         print(f"%<*InvN>{N}%</InvN>")
         print(f"%<*InvRM>{R_M}%</InvRM>")
+        print(f"%<*InvCoordinateOverhead>{COORDINATE_OVERHEAD}%</InvCoordinateOverhead>")
     elif not LATEX_MODE:
         print(f"Capacities: L_INTRINSIC={L_INTRINSIC}, L_EMBED={L_EMBED}, N={N}, RM={R_M}")
 
@@ -688,7 +689,7 @@ def main():
 
 
     # --- Strong Coupling ---
-    numerator_s = (NU*MANIFOLD_FRICTION) + (1.0 / D)
+    numerator_s = (NU*COORDINATE_OVERHEAD) + (1.0 / D)
     ALPHA_S_GEO = numerator_s / ALPHA_INV_GEO
 
     print_derivation(
@@ -696,7 +697,7 @@ def main():
         tag="AlphaS",
         formula_sym="(nu*eta + 1/D) / alpha_inv",
         latex_sym=r"\frac{\nu \cdot \eta + 1/D}{\alpha^{-1}}",
-        formula_num=f"({NU} * {MANIFOLD_FRICTION:.4f} + 0.25) / {ALPHA_INV_GEO:.4f}",
+        formula_num=f"({NU} * {COORDINATE_OVERHEAD:.4f} + 0.25) / {ALPHA_INV_GEO:.4f}",
         result=ALPHA_S_GEO,
         latex_mode=LATEX_MODE,
         ref_key="alpha_s",
@@ -752,7 +753,7 @@ def main():
     # However, this unit channel is projected onto the D=4 manifold.
     # It is subject to the same Manifold Friction (eta) as the Chiral Capacity.
     # Effective Step = 1.0 * eta
-    RESONANCE_DROP = 1.0 * MANIFOLD_FRICTION
+    RESONANCE_DROP = 1.0 * COORDINATE_OVERHEAD
     
     ALPHA_INV_MZ_CALC = ALPHA_INV_GEO - SCREENING_FOG - RESONANCE_DROP
 
@@ -761,20 +762,20 @@ def main():
         tag="AlphaRunning",
         formula_sym="alpha_inv - Fog - eta",
         latex_sym=r"\alpha^{-1}_{geo} - \Sigma Q^2 - \eta",
-        formula_num=f"{ALPHA_INV_GEO:.4f} - {SCREENING_FOG} - {MANIFOLD_FRICTION:.4f}",
+        formula_num=f"{ALPHA_INV_GEO:.4f} - {SCREENING_FOG} - {COORDINATE_OVERHEAD:.4f}",
         result=ALPHA_INV_MZ_CALC,
         latex_mode=LATEX_MODE,
         ref_key="alpha_inv_mz",
     )
 
     # --- Weak Mixing Angle ---
-    denom_weak = (D * DELTA) + (NU*MANIFOLD_FRICTION) + SIGMA
+    denom_weak = (D * DELTA) + (NU*COORDINATE_OVERHEAD) + SIGMA
     SIN2_THETA_W_GEO = DELTA / denom_weak
 
     print_derivation(
         name="Weak Mixing Angle (sin^2 theta_W)",
         tag="WeakAngle",
-        formula_sym="Delta / (D*Delta + (ν * MANIFOLD_FRICTION) + σ)",
+        formula_sym="Delta / (D*Delta + (ν * COORDINATE_OVERHEAD) + σ)",
         latex_sym=r"\frac{\Delta}{D\Delta + \nu + \sigma}",
         formula_num=f"{DELTA} / {denom_weak:.4f}",
         result=SIN2_THETA_W_GEO,
@@ -787,7 +788,7 @@ def main():
     print_derivation(
         name="Weak Mixing Angle (sin^2 theta_W)",
         tag="WeakAngleGlobal",
-        formula_sym="Delta / (D*Delta + (ν * MANIFOLD_FRICTION) + σ)",
+        formula_sym="Delta / (D*Delta + (ν * COORDINATE_OVERHEAD) + σ)",
         latex_sym=r"\frac{\Delta}{D\Delta + \nu + \sigma}",
         formula_num=f"{DELTA} / {denom_weak:.4f}",
         result=SIN2_THETA_W_GEO,
@@ -803,7 +804,7 @@ def main():
     print_derivation(
         name="Weak Mixing Angle (sin^2 theta_W)",
         tag="WeakAngleTCheck",
-        formula_sym="Delta / (D*Delta + (ν * MANIFOLD_FRICTION) + σ)",
+        formula_sym="Delta / (D*Delta + (ν * COORDINATE_OVERHEAD) + σ)",
         latex_sym=r"\frac{\Delta}{D\Delta + \nu + \sigma}",
         formula_num=f"{DELTA} / {denom_weak:.4f}",
         result=TCHECK,
@@ -917,7 +918,7 @@ def main():
 
     # --- Jarlskog Invariant (Time Asymmetry) ---
     PHI = (1 + math.sqrt(5)) / 2
-    J_GEO = pow(PHI, 2) * comp_TOL * MANIFOLD_FRICTION
+    J_GEO = pow(PHI, 2) * comp_TOL * COORDINATE_OVERHEAD
 
     print_derivation(
         name="Jarlskog Invariant (J)",
@@ -1053,7 +1054,7 @@ def main():
     # The ideal aperture is (Sigma + 1) = 6.
     # The projection onto the manifold (D*Delta) introduces a friction term 1/(D*Delta).
     APERTURE_IDEAL = SIGMA + 1.0
-    APERTURE_PROJECTED = APERTURE_IDEAL * MANIFOLD_FRICTION
+    APERTURE_PROJECTED = APERTURE_IDEAL * COORDINATE_OVERHEAD
     
     # 2. Higgs Impedance Calculation
     # Z_H = (1/lambda) * exp(-2*lambda)
@@ -1164,7 +1165,7 @@ def main():
     RESULTS = {}
     RESULTS["AlphaInv"] = ALPHA_INV_GEO
     RESULTS["FermiConst"] = GF_GEO
-    RESULTS["WBosonMass"] = MW_GEO
+#    RESULTS["WBosonMass"] = MW_GEO
     RESULTS["AlphaS"] = ALPHA_S_GEO
     RESULTS["HiggsMass"] = MH_GEO
 
