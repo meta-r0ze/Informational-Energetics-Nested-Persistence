@@ -72,8 +72,10 @@ In a discrete lattice with $\nu$ chiral channels, the coupling $\alpha_s$ repres
     
     \item \textbf{Effective Coupling:} Because of this reference lock, the maximum active signal capacity is limited to exactly $\nu-1$ independent channels, while the geometric impedance ($\alpha^{-1}$) is normalized to the full capacity $\nu$.
 
-    \item \textbf{The Sterile Channel ($\nu_R$):} The $E_8 \to D_4 \oplus D_4$ projection's triality structure isolates exactly one chiral channel as a topological singlet, lacking coupling to the active boundary $\chi=2$. This is a \textbf{geometric vacancy}, not necessarily a propagating particle. At full saturation, the unitarity constraint $\sum_{i=1}^{\nu} p_i = 1$ locks one degree of freedom; the triality structure identifies which channel. The effective active capacity is therefore $(\nu-1)/\nu = 15/16$.
+    \item \textbf{The Sterile Channel ($\nu_R$):} The $E_8 \to D_4 \oplus D_4$ decomposition assigns the 16 physical spinors to the $8_s$ representation of each $D_4$ factor. $D_4$ triality is the $S_3$ symmetry permuting the three inequivalent 8-dimensional representations $\{8_v, 8_s, 8_c\}$. Under the $SU(2)$ action of the topological boundary $\chi=2$ (the weak isospin generator), the $8_s$ decomposes into $SU(2)$ doublets plus exactly one $SU(2)$ singlet. This singlet is triality-forced: it corresponds to the direction in $8_s$ that maps to $8_c$ under the triality automorphism and therefore carries zero weak isospin --- it is the unique $D_4$ representation fixed by the triality action relative to the $SU(2)$ boundary. Triality does not merely \emph{identify} this channel after the fact; it \emph{guarantees} exactly one such singlet exists among the 16 chiral states (full derivation deferred to the companion paper on fermion structure). This singlet is the \textbf{geometric vacancy}: a topological absence, not a propagating particle. At full saturation, the unitarity constraint locks exactly this channel. The effective active capacity is therefore $(\nu-1)/\nu = 15/16$.
 \end{enumerate}
+
+\textit{Why multiplicative?} In Shannon's channel capacity model, a coupling constant represents the fraction of the substrate's transmission probability allocated to a given interaction. If one of $\nu$ independent channels is blocked (locked as a reference state), the remaining $(\nu-1)$ channels transmit freely, but the total available probability space has not changed --- it is still normalized to $\nu$ channels. The coupling therefore scales as the ratio of active-to-total probability: $(\nu-1)/\nu$. An additive correction would imply the blocked channel contributes negative coupling, which has no geometric meaning; the multiplicative ratio correctly reflects the fractional reduction in available transmission probability.
 
 The effective coupling at saturation becomes:
 \begin{equation}
@@ -102,7 +104,7 @@ through higher-order loop diagrams ($\alpha_s^2$, $\alpha_s^3$, \ldots). We obta
     \item Observable in lattice QCD simulations evaluated at finite volume.
 \end{itemize}
 
-\subsubsection{Validation 3: Geometric Universality (QED Screening)}
+\subsubsection{Derivation 3: Geometric Universality --- The QED Beta Coefficient}
 
 Having validated the QCD stiffness coefficients through running coupling predictions, we now test whether these geometric construction rules extend beyond the Strong Force. If the beta function coefficients are truly geometric properties rather than group-theoretic accidents, the same rules must apply universally to all gauge theories. We test this by deriving the QED coefficient from identical geometric principles.
 
@@ -117,6 +119,7 @@ The QED Beta coefficient is the exact ratio of topology to spatial dilution, per
     \beta_0^{\text{QED}} = \frac{2\chi}{D-1} = \frac{4}{3}
 \end{equation}
 
+\subsubsection{Consistency Check: The Z-Pole Running Coupling (Empirical Anchor)}
 \textbf{Numerical Validation (The Unitary Resonance):}
 To test the QED screening effect at the Z-Pole ($M_Z$), we temporarily adopt the experimentally evaluated vacuum polarization ``Screening Fog'' $\Delta \alpha_{\text{total}} \approx 0.0590$ (PDG 2024) as an external input. We utilize this empirical anchor strictly to isolate and validate the geometric projection overhead ($\eta$) at the Z-Pole. (The \textit{ab initio} derivation of the full fermion spectrum required to calculate $\Delta\alpha_{total}$ purely from geometry is the subject of a companion paper, ensuring this temporary anchor does not introduce a free parameter into the fundamental architecture). 
 
