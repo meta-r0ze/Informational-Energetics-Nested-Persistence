@@ -8,7 +8,7 @@ Consequently, the theory generates specific ``Hard Constraints" that serve as fa
 
 \subsection{The Zero-Degree-of-Freedom Electroweak Fit}
 
-Standard global fits treat the Fine-Structure Constant ($\alpha$), the Fermi Constant ($G_F$), and the Weak Mixing Angle ($\sin^2\theta_W$) as floating nuisance parameters constrained only by measurement errors. 
+Standard global fits treat the Fine-Structure Constant ($\alpha$), the Fermi Constant ($G_F$), and the Weak Mixing Angle ($\sin^2\theta_W$) as floating nuisance parameters constrained only by measurement errors.
 
 \textbf{The Audit Task:} Run the global electroweak fit with these parameters fixed to their geometric derivations:
 \begin{align}
@@ -25,17 +25,23 @@ G_F &= (\sqrt{2}v^2)^{-1} \quad (\text{Fixed via } v_{geo})
 The integer invariants $\{\nu=16, D=4\}$ act as hard hardware limits. Unlike effective field theories where new heavy particles can be assumed to exist at higher energy scales, this framework asserts that the \textbf{geometry required to host such particles does not exist}.
 
 \begin{enumerate}
-    \item \textbf{The Kaluza-Klein Prohibition ($D=4$):} Standard String Theories require extra spatial dimensions ($D=10, 11$). The $E_8$ projection mandates $D=4$ to preserve lattice self-duality. 
+    \item \textbf{The Kaluza-Klein Prohibition ($D=4$):} Standard String Theories require extra spatial dimensions ($D=10, 11$). The $E_8$ projection mandates $D=4$ to preserve lattice self-duality.
     \textit{Test:} A confirmed detection of Kaluza-Klein graviton modes or large extra dimensions at the LHC/FCC falsifies the projection mechanism.
-    
-    \item \textbf{The Supersymmetry Prohibition ($\nu=16$):} 
+
+    \item \textbf{The Supersymmetry Prohibition ($\nu=16$):}
     The chiral truncation limits the active channel capacity to 16 states per generation. The Standard Model fermions already occupy exactly 48 states ($3 \times 16$). The lattice is saturated. This acts as a double-lock against SUSY. First, there are no available bit-addresses in the node to encode superpartner quantum numbers. Second, extending the manifold with Grassmann coordinates (Superspace) creates an effective fractional dimension that violates the Kneser constraints required for lattice self-duality. The substrate hardware ($E_8$) physically cannot map to the Superspace software. \textit{Test:} The discovery of a supersymmetric partner with quantum numbers occupying the $\nu=16$ channel space would require extending the chiral capacity, contradicting the projection derived in Paper 1. Such a discovery would necessitate revisiting the substrate geometry.
 
-    \textbf{The GUT Expectation ($\sigma \neq \chi$):} In this framework, the forces arise from distinct geometric features ($\Delta$ vs. $D\Delta$ vs. $\sigma$). Consequently, the theory structurally expects that precision measurements will continue to show the gauge couplings failing to converge at a single energy scale. This is not a strict prohibition, a consistent unified  embedding might yet be found, but it identifies the ``GUT mismatch'' as a natural consequence of the substrate architecture rather than evidence for missing threshold corrections.
+    \item \textbf{The GUT Expectation ($\sigma \neq \chi$):} In this framework, the forces arise from distinct geometric features ($\Delta$ vs. $D\Delta$ vs. $\sigma$). Consequently, the theory structurally expects that precision measurements will continue to show the gauge couplings failing to converge at a single energy scale. This is not a strict prohibition, a consistent unified  embedding might yet be found, but it identifies the ``GUT mismatch'' as a natural consequence of the substrate architecture rather than evidence for missing threshold corrections.
 \end{enumerate}
 
 \subsection{The Precision \texorpdfstring{$\alpha$}{alpha} Vector}
 As established in \cite{meyer_informational_2026}, the most immediate test of the foundational substrate is the convergence of the Fine-Structure Constant. Because the massive energy scales derived in this nested architecture are geometrically locked to $\alpha^{-1}$, deviation in the base impedance physically breaks the global solvency of the hierarchy.
+
+\subsection{Additional Hard Constraints}
+
+\textbf{Strong CP and Axion Searches:} The topological prohibition of $\theta_{QCD} \equiv 0$ (\cref{sec:strong_cp_prohibition}) predicts that axion searches targeting the Peccei-Quinn mechanism will yield null results and that the neutron electric dipole moment is bounded by the CKM background ($\sim 10^{-32}$ e$\cdot$cm). Any confirmed detection of a standard QCD axion or a nEDM measurement exceeding $10^{-30}$ e$\cdot$cm would constitute a hard falsification.
+
+\textbf{The Prohibition of Intermediate Forces:} The $E_8$-Persistence theory allows only two topologically stable force origins: the boundary ($r=0$, gauge forces) and the centroid ($r=\Delta/2$, gravity). A stable force originating at an intermediate lattice depth lacks a topological anchor and must decay. This prohibits stable ``Fifth Force'' carriers at any energy scale between the gauge bosons and $M_P$ (\cref{sec:geometric_depth}).
 
 \subsection{Theoretical Audits (Community Verification)}
 
@@ -44,6 +50,3 @@ The framework makes specific structural claims that allow for rigorous theoretic
 \begin{enumerate}
     \item \textbf{The Lattice Loop Calculation:} We identified the QCD beta function coefficients ($11, 2/3$) with geometric invariants of the substrate. An \textit{ab initio} lattice field theory calculation should confirm that these values arise as eigenvalues of the transfer matrix without manual identification.
 \end{enumerate}
-
-
-%     \item \textbf{Strong CP and Axion Searches:} Because the strong force sector ($\sigma - \chi = 3$) is geometrically orthogonal to the temporal boundary, $\theta_{QCD} \equiv 0$ is the exact, static ground state of the vacuum. This topological prohibition predicts that the neutron electric dipole moment (nEDM) is strictly limited to the electroweak CKM background ($\sim 10^{-32}$ e·cm), and axion searches targeting the standard Peccei-Quinn mechanism will continue to yield null results. This does not exclude axion-like particles (ALPs) arising from independent dark matter phenomenology, but the discovery of a standard QCD axion would invalidate this topological isolation.

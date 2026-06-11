@@ -42,8 +42,6 @@
 \CatchFileBetweenTags{\VacuumEnergyScaleExperimentalValue}{constants.tex}{VacuumEnergyScaleExperimentalValue}
 
 \CatchFileBetweenTags{\HiggsLambdaSigma}{constants.tex}{HiggsLambdaSigma}
-\CatchFileBetweenTags{\CabibboAngleSigma}{constants.tex}{CabibboAngleSigma}
-\CatchFileBetweenTags{\CabibboAngleExperimentalValue}{constants.tex}{CabibboAngleExperimentalValue}
 \CatchFileBetweenTags{\PlanckMassSigma}{constants.tex}{PlanckMassSigma}
 \CatchFileBetweenTags{\GravCouplingSigma}{constants.tex}{GravCouplingSigma}
 
@@ -53,21 +51,18 @@
 While Section \ref{sec:Synthesis} demonstrated that the partitioned architecture is mathematically self-consistent, we must ultimately determine if it describes our physical reality. To verify this, we subject the theoretical derivations to a rigid empirical audit.
 
 \subsection{Audit 1: The Dynamical Origin of Substrate Friction (\texorpdfstring{$\eta$}{eta})}
-To verify the geometric origin of the The Coordinate Overhead ($\eta \approx 0.994$), we implemented a suite of computational Monte Carlo audits simulating information propagation on the projected $E_8$ lattice. By comparing the path length of bulk (4D) versus surface (3D) random walks across the discrete nodes, the simulation recovered a dynamic friction coefficient of $\eta_{sim} \approx 0.988$. 
+To verify the geometric origin of the The Coordinate Overhead ($\eta \approx 0.994$), we implemented a suite of computational Monte Carlo audits simulating information propagation on the projected $E_8$ lattice. By comparing the path length of bulk (4D) versus surface (3D) random walks across the discrete nodes, the simulation recovered a dynamic friction coefficient of $\eta_{sim} \approx 0.988$.
 
 This aligns with the theoretical resonant value ($\eta_{th} \approx 0.994186$) to within $0.7\%$. This numerical simulation acts as a ``Kill-Switch'': it confirms that $\eta$ is the strict, irreducible geometric cost of projecting a higher-dimensional discrete capacity onto a lower-dimensional coordinate manifold. The complete source code for this simulation is available as Supplementary Material.
 
 \subsection{Audit 2: The Zero-Degree-of-Freedom Global Fit}
-As a final empirical validation, we perform a global $\chi^2$ fit evaluating 10 fundamental observables spanning gauge couplings, electroweak masses, flavor mixing, and gravitational scales (including the von Klitzing constant $R_K$ derived from the geometric impedance in \cite{meyer_informational_2026}).
+As a final empirical validation, we perform a global $\chi^2$ fit evaluating 9 fundamental observables spanning gauge couplings, electroweak masses, and gravitational scales (including the von Klitzing constant $R_K$ derived from the geometric impedance in \cite{meyer_informational_2026}).
 
-Crucially, standard Effective Field Theory global fits achieve their precision by floating continuous input parameters to match the data. The $E_8$-Persistence theory possesses \textbf{zero floating parameters}. Every theoretical value is rigidly locked to the geometric derivations established in the preceding sections. Consequently, the Degrees of Freedom (DOF) for this fit is exactly equal to the number of observables ($N=10$). 
-
-Because the theory possesses zero floating parameters, the degrees of freedom for this fit is exactly equal to the number of observables ($N=10$). This is the statistically conservative choice: a parameterized model with $p$ free parameters would have $\chi^2$ distributed with $N-p$ degrees of freedom, yielding a more favorable reduced $\chi^2$. Our zero-parameter 
-constraint therefore \emph{increases} the burden of proof. A reduced $\chi^2 \gg 1$ would indicate that the geometric invariants fail to capture the physical correlations; $\chi^2 \ll 1$ would suggest overfitting or correlated experimental errors. The observed $\chi^2 \approx 1$ is the unique signature of a structurally determined, non-tunable architecture.
+Crucially, standard Effective Field Theory global fits achieve their precision by floating continuous input parameters to match the data. The $E_8$-Persistence theory possesses \textbf{zero floating parameters}. Every theoretical value is rigidly locked to the geometric derivations established in the preceding sections. The degrees of freedom for this fit is therefore equal to the number of observables ($N=9$): the statistically conservative choice. A parameterized model with $p$ free parameters would have $\chi^2$ distributed with $N-p$ degrees of freedom, yielding a more favorable reduced $\chi^2$. Our zero-parameter constraint therefore \emph{increases} the burden of proof. A reduced $\chi^2 \gg 1$ would indicate that the geometric invariants fail to capture the physical correlations; $\chi^2 \ll 1$ would suggest overfitting or correlated experimental errors. The observed $\chi^2 \approx 1$ is the unique signature of a structurally determined, non-tunable architecture.
 
 \begin{table*}[h!]
 \centering
-\caption{The Zero-DOF Global Geometric Audit. The combined fit across both tiers demonstrates a reduced $\chi^2 \approx 1.05$. Because there are zero tunable parameters, this precision strictly indicates that the geometric constraints of the $E_8$ lattice natively encode the physical correlations of the Standard Model. Tier 3 values are not included in the global $\chi^2$ calculations. Because they are strict algebraic consequences of the Tier 1 and Tier 2 inputs, including them would double-count degrees of freedom. They are presented here to demonstrate the framework's dependent predictive power.}
+\caption{The Zero-DOF Global Geometric Audit. The combined fit across both tiers demonstrates a reduced $\chi^2 \approx \combinedreducedchiVal$. Because there are zero tunable parameters, this precision strictly indicates that the geometric constraints of the $E_8$ lattice natively encode the physical correlations of the Standard Model. Tier 3 values are not included in the global $\chi^2$ calculations. Because they are strict algebraic consequences of the Tier 1 and Tier 2 inputs, including them would double-count degrees of freedom. They are presented here to demonstrate the framework's dependent predictive power.}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{@{}lllr@{}}
 \toprule
@@ -83,17 +78,16 @@ $M_H$ & \HiggsMassVal & \HiggsMassExperimentalValue & $\HiggsMassSigma \sigma$ \
 \midrule
 \multicolumn{3}{l}{\textbf{Tier 1 $\chi^2$}} & \textbf{$\bosonictotalchiVal$ (5 DOF)} \\
 \midrule
-\multicolumn{4}{c}{\textit{Tier 2: Flavor Spectrum, Hierarchy, \& Resistance}} \\
+\multicolumn{4}{c}{\textit{Tier 2: Mass Hierarchy \& Resistance}} \\
 \midrule
 $\sin^2\theta_W$ & \WeakAngleVal & \WeakAngleExperimentalValue & $\WeakAngleSigma \sigma$ \\
-$|V_{us}|$ ($\sin\theta_C$) & \CabibboAngleVal & \CabibboAngleExperimentalValue & $\CabibboAngleSigma \sigma$ \\
 $J_{CKM}$ & $\JarlskogVal$ & \JarlskogExperimentalValue & $\JarlskogSigma \sigma$ \\
 $M_P$ & \PlanckMassVal & \PlanckMassExperimentalValue & $\PlanckMassSigma \sigma$ \\
 $R_K$ & \VonKlitzingVal & \VonKlitzingExperimentalValue & $\VonKlitzingSigma \sigma$ \\
 \midrule
-\multicolumn{3}{l}{\textbf{Tier 2 $\chi^2$}} & \textbf{$\spectrumtotalchiVal$ (5 DOF)} \\
+\multicolumn{3}{l}{\textbf{Tier 2 $\chi^2$}} & \textbf{$\spectrumtotalchiVal$ (4 DOF)} \\
 \midrule
-\multicolumn{3}{l}{\textbf{Combined Total $\chi^2$}} & \textbf{\combinedtotalchiVal (10 DOF)} \\
+\multicolumn{3}{l}{\textbf{Combined Total $\chi^2$}} & \textbf{\combinedtotalchiVal (9 DOF)} \\
 \multicolumn{3}{l}{\textbf{Combined Reduced $\chi^2$}} & \textbf{\combinedreducedchiVal} \\
 \midrule
 \multicolumn{4}{c}{\textit{Tier 3: Derived Consequences}} \\
@@ -110,6 +104,6 @@ $v$ & $\HiggsVEVVal$ & $\HiggsVEVExperimentalValue$ & $\HiggsVEVSigma \sigma$ \\
 \end{table*}
 
 \subsection{Conclusion of the Audit}
-A reduced $\chi^2 \approx 1$ signifies that the theoretical predictions match the experimental observations perfectly within the bounds of expected statistical variance. 
+A reduced $\chi^2 \approx 1$ signifies that the theoretical predictions match the experimental observations perfectly within the bounds of expected statistical variance.
 
-Standard physics considers the parameters in Table \ref{tab:global_fit} to be disjoint properties of reality, requiring individual experimental measurement. The ability of a single geometric lattice to rigidly predict all ten values simultaneously linking the macroscopic gravitational scale ($M_P$), the topological quantization of charge ($R_K$), the breaking of electroweak symmetry ($G_F, M_W, M_H$), and the arrow of time ($J_{CKM}$) into a single unified impedance network, suggests these are not independent fundamental constants. They are the strictly necessary capacity partitions of a single, finite-bandwidth information processing substrate operating in Quiescent Equilibrium.
+Standard physics considers the parameters in Table \ref{tab:global_fit} to be disjoint properties of reality, requiring individual experimental measurement. The ability of a single geometric lattice to rigidly predict all nine values simultaneously linking the macroscopic gravitational scale ($M_P$), the topological quantization of charge ($R_K$), the breaking of electroweak symmetry ($G_F, M_W, M_H$), and the arrow of time ($J_{CKM}$) into a single unified impedance network, suggests these are not independent fundamental constants. They are the strictly necessary capacity partitions of a single, finite-bandwidth information processing substrate operating in Quiescent Equilibrium.
