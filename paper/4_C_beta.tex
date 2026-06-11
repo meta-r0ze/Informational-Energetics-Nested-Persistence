@@ -56,16 +56,11 @@ Substituting the values:
 \alpha_s^{\text{(1-loop)}}(M_\tau) \approx \frac{0.1179}{1 + \frac{9}{2\pi}(0.1179)(-3.93)} \approx \AlphaSTauLinearVal
 \end{equation}
 
-\CatchFileBetweenTags{\AlphaSTauLinearVal}{constants.tex}{AlphaSTauLinearVal}
-\CatchFileBetweenTags{\AlphaSTauCorrectedVal}{constants.tex}{AlphaSTauCorrectedVal}
-
 \subsubsection{The Finite Capacity Correction (The Sterile Channel)}
 
 A continuous field theory implicitly assumes infinite information capacity, allowing channels to operate entirely independently regardless of signal density. In the $E_8$-Persistence theory, the channel capacity is strictly finite ($\nu=16$). 
 
 As the Saturation Ratio $\alpha_s$ approaches maximum throughput ($\gtrsim 0.3$), the lattice becomes \textbf{capacity-limited}, analogous to a digital communication channel approaching maximum bandwidth. The linear one-loop prediction ($\alpha_s^{\text{(1-loop)}} \approx \AlphaSTauLinearVal$) fails to account for this hardware limit. We must apply the geometric mechanism of capacity saturation:
-
-In the $E_8$-Persistence theory, the channel capacity is strictly finite ($\nu=16$). As the Saturation Ratio $\alpha_s$ approaches maximum throughput ($\gtrsim 0.3$), the lattice becomes \textbf{capacity-limited}, analogous to a communication channel approaching maximum bandwidth.
 
 \textbf{The Geometric Mechanism:}
 In a discrete lattice with $\nu$ chiral channels, the coupling $\alpha_s$ represents the fraction of channels actively transmitting color charge. In the continuum limit (weak coupling), channels operate independently. However, at saturation:
@@ -152,6 +147,4 @@ The $E_8$-Persistence theory explicitly resolves this gap. At the exact energy o
 \textbf{Physical Interpretation:} The difference between the low-energy coupling ($\sim 137$) and the Z-pole coupling ($\sim 128$) is the sum of standard fermion screening (QFT) and exactly one unit of geometric resonance ($\Delta^0=1$), corrected for manifold projection efficiency ($\eta$).
 
 \textbf{Empirical Anchor Declaration:}
-To isolate the geometric projection overhead $\eta$ at the Z-pole from the fermion screening contribution, we utilize the experimentally evaluated vacuum polarization $\Delta\alpha_{\text{total}} \approx 0.0590$ (PDG 2024) as a known boundary condition. This is analogous to using the refractive index of air when verifying Snell's law: the geometric derivation of $\eta$ is independent of the medium's dispersion, but its experimental isolation requires separating the two effects. The ab initio derivation of $\Delta\alpha_{\text{total}}$ from the fermion spectrum is the subject of a companion paper; here, we verify that the geometric correction $\Delta^0 \cdot \eta$ closes the remaining $\sim$1.0 discrepancy once the screening contribution is accounted for.
-
-Applying this shift to the static vacuum impedance yields a standard effective coupling of $\alpha^{-1}_{\mathrm{QFT}} \approx 137.036 - 8.085 = 128.951$ (where the absolute shift is $\alpha^{-1}_{\mathrm{geo}} \cdot \Delta\alpha_{\mathrm{total}} \approx 8.085$). This leaves a $\approx 1.0$ discrepancy against the experimental value of $127.955$.
+To isolate the geometric projection overhead $\eta$ at the Z-pole from the fermion screening contribution, we utilize the experimentally evaluated vacuum polarization $\Delta\alpha_{\text{total}} \approx 0.0590$ (PDG 2024) as a known boundary condition. This is analogous to using the refractive index of air when verifying Snell's law: the geometric derivation of $\eta$ is independent of the medium's dispersion, but its experimental isolation requires separating the two effects. The \textit{ab initio} derivation of $\Delta\alpha_{\text{total}}$ from the fermion spectrum is the subject of a companion paper; here, we verify that the geometric correction $\Delta^0 \cdot \eta$ closes the remaining $\sim 1.0$ discrepancy once the screening contribution is accounted for.
