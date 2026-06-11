@@ -35,7 +35,7 @@
 \section{System 5: The Resonant Interface (The Electroweak Scale)}
 \label{sec:resonant_interface}
 
-The vacuum possesses a strictly finite channel capacity ($\nu=16$) operating at a fundamental temporal resonance ($\Delta=43$). In physical terms, this finite bandwidth imposes a strict ceiling on the local energy density of the lattice ($E = \hbar\omega$). The introduction of complex Topological Defects into the bulk saturates this core capacity, threatening the vacuum with Causal Aliasing (runaway energy divergence). 
+The vacuum possesses a strictly finite channel capacity ($\nu=16$) operating at a fundamental temporal resonance ($\Delta=43$). In physical terms, this finite bandwidth imposes a strict ceiling on the local energy density of the lattice ($E = \hbar\omega$). The introduction of complex Topological Defects into the bulk saturates this core capacity, threatening the vacuum with Causal Aliasing: the routing failure where the substrate can no longer distinguish which channel belongs to which process when the capacity budget $\nu$ is exceeded, which manifests physically as runaway energy divergence.
 
 To persist, the system must resolve this complexity. While System 4 defined the \textit{fractional ratio} of bandwidth allocated to this sector (e.g., $\sin^2\theta_W$), System 5 derives the \textit{absolute magnitude} of that capacity. This absolute ceiling manifests as the Electroweak Scale.
 
@@ -52,7 +52,7 @@ Consistent with \textit{Informational Energetics: Entropic Action} \cite{meyer_i
     \item \textbf{Margin ($y_e$):} The Electron Yukawa; the minimal resolvable noise floor.
 \end{itemize}
 
-In the Standard Model, the seemingly arbitrary values of this sector constitute the ``Hierarchy Problem.'', but they are recognized here as the unique set of partition coefficients required to maintain vacuum stability against causal aliasing.
+In the Standard Model, the seemingly arbitrary values of this sector constitute the ``Hierarchy Problem,'' but they are recognized here as the unique set of partition coefficients required to maintain vacuum stability against causal aliasing.
 
 \subsection{Capacity: The Higgs VEV (\texorpdfstring{$v$}{v})}
 Under \textbf{Rule 1: Capacity Partitioning}, the VEV represents the net informational capacity allocated to the Weak Interaction. We derive this by calculating the total available states over the causal boundary and subtracting the structural overhead.
@@ -60,9 +60,9 @@ Under \textbf{Rule 1: Capacity Partitioning}, the VEV represents the net informa
 \subsubsection{The Bare Geometric Floor}
 To derive the absolute capacity of the Electroweak interface, we must first define the total informational envelope required to sustain a stable topological defect. Under \textbf{Rule 1: Capacity Partitioning}, the system must allocate enough bandwidth to account for every state transition within the defect's causal influence.
 
-The temporal period $\Delta=43$ defines the \textit{causal horizon} of a lattice interaction (the distance information can travel before the system resets). Because information propagates isotopically at the speed of light ($c=1$), this resonance defines a 2-dimensional causal area $\Delta \times \Delta = \Delta^2$. 
+The temporal period $\Delta=43$ defines the \textit{causal horizon} of a lattice interaction (the distance information can travel before the system resets). Because information propagates isotropically at the speed of light ($c=1$), this resonance defines a 2-dimensional causal area $\Delta \times \Delta = \Delta^2$. (\textit{Scope Defense: For a spherically symmetric defect, the relevant counting measure is the $(r,t)$ cross-section; both the radial and temporal horizons extend to $\Delta$ at $c=1$. The $\chi=2$ topological boundary is a 2-surface, confirming this plane as the natural locus for state-slot counting.})
 
-To distinguish a specific particle (a defect) from the vacuum, this area must be bounded by the topological invariant $\chi=2$ (the sphere). The total capacity envelope required to resolve the defect's identity against the background is therefore the product of its topological signature and its resonant area: $\chi \Delta^2$. This represents the total number of ``state-slots'' available to the interface over one cycle. 
+To distinguish a specific particle (a defect) from the vacuum, this area must be bounded by the topological invariant $\chi=2$ (the sphere). The total capacity envelope required to resolve the defect's identity against the background is therefore the product of its topological signature and its resonant area: $\chi \Delta^2$. This represents the total number of ``state-slots'' available to the interface over one cycle.
 
 From this total envelope, the substrate must reserve the total information the vacuum must process per fundamental cycle: ($L_{substrate} = \nu + D \cdot \Delta = 188$\cite{meyer_ieaction_2026}). Multiplying by the baseline vacuum impedance ($\alpha^{-1}$) we can get the transmission impedance.
 
@@ -84,13 +84,13 @@ In the continuum limit, the localized charge of a defect is not a discrete point
 \begin{equation}
 D_{eff} = D + \frac{\chi}{4\pi} \approx 4.15915
 \end{equation}
-\textit{(Scope Defense: This continuous $4\pi$ correction represents the macroscopic solid angle of the $\chi=2$ boundary; it does not alter the integer dimensionality of the substrate).} This yields the dilution factor:
+\textit{(Scope Defense: This continuous $4\pi$ correction represents the macroscopic solid angle of the $\chi=2$ boundary; it does not alter the integer dimensionality of the substrate. The correction is $\alpha/D_{eff}$ rather than $\alpha/D$ because the effective volume experienced by the coupling is $D_{eff}$, not the bare lattice rank $D$.)} This yields the dilution factor:
 \begin{equation}
 \delta_{topo} = \left( 1 + \frac{\alpha}{D_{eff}} \right)
 \end{equation}
 
 \paragraph{Thermodynamic Noise (Temporal Correction)}
-We must also subtract the energy ``lost'' to the substrate's resolution floor. Under \textbf{Rule 2: Reversible Encoding}, the \textbf{Margin Impedance} ($Z_{MAR} \approx \AlphaInvMAR$) defines the minimum resolvable energy unit. Because the vacuum supports exactly 3 fermion generations (the available residual degrees of freedom: $\sigma - \chi = 3$), this noise is partitioned across these three available ``signal slots.'' To maintain global solvency, the physical VEV must be reduced by this noise amplitude:
+We must also subtract the energy ``lost'' to the substrate's resolution floor. Under \textbf{Rule 2: Reversible Encoding}, the \textbf{Margin Impedance} ($Z_{MAR} \approx \AlphaInvMAR$) defines the minimum resolvable energy unit. Because the vacuum supports exactly 3 fermion generations (the available residual degrees of freedom: $\sigma - \chi = 3$), this noise is partitioned equally across these three independent ``signal slots.'' \textit{(Scope Defense: The divisor $(\sigma-\chi) = 3$ is the internal interaction bulk minus the topological boundary — the number of geometrically independent generation channels. Dividing by $\nu=16$ would conflate chiral capacity with generational noise channels, which are orthogonal degrees of freedom.)} To maintain global solvency, the physical VEV must be reduced by this noise amplitude:
 \begin{equation}
 \delta_{noise} = \left( 1 - \frac{Z_{MAR}}{\sigma - \chi} \right)
 \end{equation}
@@ -104,7 +104,7 @@ v_{phys} = v_{geo} \cdot \delta_{topo} \cdot \delta_{noise}
 Substituting the derived values:
 \begin{equation}
 \begin{split}
-v_{phys} &= (\HiggsVEVStepOneVal) \cdot \\ 
+v_{phys} &= (\HiggsVEVStepOneVal) \cdot \\
 &\left( 1 + \frac{\alpha}{4.159} \right) \cdot \left( 1 - \frac{\AlphaInvMAR}{3} \right) \\
 & \approx \mathbf{\HiggsVEVVal}
 \end{split}
@@ -118,8 +118,8 @@ v_{phys} &= (\HiggsVEVStepOneVal) \cdot \\
 \end{tabular}
 \vspace{0.5em}
 
-\subsubsection{Validation: The Fermi Constant (\texorpdfstring{$G_F$}{GF})}
-To validate the derived energy capacity of the interface ($v_{phys}$), we calculate the \textbf{Fermi Constant} ($G_F$), which serves as the experimental measure of the Weak interaction's effective strength. In standard QFT, these are related by $G_F = 1/(\sqrt{2}v^2)$. While the $\sqrt{2}$ is treated as a historical artifact in standard physics, it emerges here as a necessary geometric projection.
+\subsubsection{Output: The Fermi Constant (\texorpdfstring{$G_F$}{GF})}
+With the interface capacity $v_{phys}$ fixed, a propagating fermion couples to it through a 1D chiral projection. The Fermi Constant $G_F$ is the inverse squared capacity of the interface, attenuated by this projection factor.
 
 \paragraph{The Geometric Origin of $\sqrt{2}$}
 In Enrico Fermi’s original theory of beta decay, he assumed parity was conserved. When the discovery of maximal parity violation later proved that only left-handed neutrinos participate in the Weak interaction, the $\sqrt{2}$ was introduced as a manual scale correction to align the theory with observed data.
@@ -141,25 +141,31 @@ The Fermi constant is therefore the inverse squared capacity of the interface, a
 \end{tabular}
 \vspace{0.5em}
 
-\subsection{Map: Scalar Hypercharge (\texorpdfstring{$Y=1$}{Y})} 
-To coordinate information across the interface, the regulator requires a discrete \textbf{Map} address. As established in \cite{meyer_ieaction_2026}, the ``origin'' coordinate of the lattice is the Unitary Ground State ($\Delta^0 = 1$). To maintain a perfect resonance with the vacuum, the regulator's address must correspond to this fundamental unitary charge.
+\subsection{Map: Scalar Hypercharge (\texorpdfstring{$Y=1$}{Y})}
+The Resonant Interface must maintain a unique, resolvable identity within the substrate it regulates. Without a discrete address, the regulator cannot distinguish its own state transitions from background vacuum fluctuations and loses coherence. The \textbf{Map} pillar assigns this address.
 
-Combined with the topological boundary ($\chi=2$), this unitary address geometrically necessitates the $SU(2)$ doublet structure found in standard physics. This allows the regulator to mediate between the chiral matter sector and the gauge field bulk. (\textit{Note: A complete derivation of how all Standard Model fermion hypercharges emerge as exact geometric ratios of these lattice invariants is provided in Appendix \ref{app:OriginOfHypercharge}}).
+As established in \cite{meyer_ieaction_2026}, the lattice's fundamental coordinate origin is the Unitary Ground State ($\Delta^0 = 1$). For the regulator to maintain continuous resonance with the vacuum without introducing a new, independent degree of freedom, its address must be this same minimal unit charge:
+\begin{equation}
+    Y = \Delta^0 = 1
+\end{equation}
+This is the unique assignment consistent with the Closure Constraint: any other value would require encoding an additional free parameter into the substrate.
+
+Combined with the topological boundary ($\chi=2$), this unitary hypercharge geometrically necessitates the $SU(2)$ doublet structure, allowing the regulator to mediate between the chiral matter sector and the gauge field bulk. (\textit{Note: A complete derivation of how all Standard Model fermion hypercharges emerge as exact geometric ratios of the lattice invariants is provided in Appendix \ref{app:OriginOfHypercharge}}.)
 
 
 
 \subsection{Protocol: Self-Coupling (\texorpdfstring{$\lambda$}{lambda})}
-In standard QFT, the Higgs self-coupling ($\lambda$) is an arbitrary parameter that determines the "stiffness" of the vacuum potential. In the $E_8$-Persistence theory, this is the \textbf{Protocol} for local self-regulation. Under \textbf{Rule 1: Capacity Partitioning}, $\lambda$ is derived as the exact fraction of the defect's bandwidth dedicated to maintaining its own internal stability.
+The Resonant Interface must regulate its own amplitude against perturbation. Without a self-regulatory feedback, scalar field fluctuations grow unbounded, causing the interface to decohere. The \textbf{Protocol} pillar allocates the bandwidth required for this internal self-regulation. Under \textbf{Rule 1: Capacity Partitioning}, this self-coupling $\lambda$ is the exact fraction of the defect's total informational complexity dedicated to maintaining internal stability. (The Standard Model labels this the Higgs self-coupling and treats it as a free parameter; here it is a determined geometric fraction.)
 
 \subsubsection{The Intrinsic Structural Load (\texorpdfstring{$L_{intrinsic}$}{Lintrinsic})}
-The ``cost'' of the defect is a fraction of by its total informational complexity. As established in \cite{meyer_informational_2026}, a defect's total informational complexity is its \textbf{Intrinsic Load} $(L_{intrinsic} = 23)$ is the sum of its orthogonal geometric components: its chiral capacity ($\nu=16$), its interaction degrees of freedom ($\sigma=5$), and its topological identity lock ($\chi=2$).
+The ``cost'' of the defect is a fraction of its total informational complexity. As established in \cite{meyer_informational_2026}, a defect's total informational complexity is its \textbf{Intrinsic Load} $(L_{intrinsic} = 23)$: the sum of its orthogonal geometric components---its chiral capacity ($\nu=16$), its interaction degrees of freedom ($\sigma=5$), and its topological identity lock ($\chi=2$).
 
 \subsubsection{The Regulatory Bandwidth}
 The ``budget'' available for self-regulation is the capacity remaining in the internal interaction bulk ($\sigma - \chi = 3$) after the identity lock is paid. However, the system must pay a \textbf{Resonant Cost} ($1/\Delta$) to maintain temporal synchronization with the lattice. Without reserving this fractional bandwidth to ``keep time,'' the scalar field would drift out of phase with the fundamental update cycle ($\Delta=43$), causing the subsystem to decohere and decay.
 
 The net bandwidth available for self-regulation is therefore:
 \begin{equation}
-\begin{split}    
+\begin{split}
 \text{Net} &= (\sigma - \chi) - \frac{1}{\Delta} \\
 &= 3 - \frac{1}{43} \approx \HiggsLambdaStepOneVal
 \end{split}
@@ -224,7 +230,7 @@ y_{e,phys} = y_{e,bare} \cdot \left(1 + \mathcal{P} \cdot \alpha \right) = y_{e,
 Consistent with the dimensional budget of the Entropic Action \cite{meyer_ieaction_2026}, higher-order feedback terms are suppressed by $\alpha^2 \approx 5 \times 10^{-5}$ and are safely truncated.
 
 \subsubsection{The Physical Result}
-Substituting the invariants ($L_{embed}=31, \sigma+1=6, \Delta=43$) and the derived $\alpha$:
+Substituting the invariants ($L_{embed} = \nu + \sigma + (D+1)\chi = 31, \; \sigma+1=6, \; \Delta=43$) and the derived $\alpha$:
 \begin{equation}
 \begin{split}
 y_{e,phys} &\approx \left(\frac{1}{31 \cdot 6 \cdot 43^2}\right) \cdot \left(1 + \frac{1.25}{137.036}\right) \\
@@ -247,9 +253,9 @@ This geometric derivation explains two fundamental features of the particle spec
     \item \textbf{Neutrino Mass:} Massive neutrinos possess Yukawa couplings $y_\nu \ll y_e$. This pushes them below the vacuum's resolution floor, meaning they cannot acquire mass via the standard Higgs mechanism (which terminates at $y_e$). Their mass must arise from a secondary, non-topological mechanism (derived in future work).
 \end{itemize}
 
-% The Resonance of the Boundary. If the VEV is the "wall" containing the data, the Higgs Mass is the sound that wall makes when you strike it. It is the geometric stiffness of the capacity bound.
-
 \subsection{Output: The Regulatory Excitation (The Higgs Mass, \texorpdfstring{$m_H$}{mH})}
+
+The Higgs mass is the resonant tone of the capacity wall: if the VEV defines the boundary containing the scalar field, $m_H$ is the frequency that boundary emits under excitation---the geometric stiffness of the capacity bound made physical.
 
 Standard model-building treats the Higgs boson as a fundamental particle akin to quarks or leptons, albeit with scalar properties. In the $E_8$-Persistence framework, the Higgs is fundamentally distinct: it is not a Topological Knot (matter), but rather \textbf{Geometric Infrastructure}. It is the physical manifestation of the Resonant Interface itself.
 
@@ -282,11 +288,11 @@ The structural test of the Resonant Interface is whether it successfully satisfi
 We verify this by comparing the \textbf{Higgs Impedance} (the controller) to the \textbf{Weak Projected Aperture} (the load).
 
 \begin{enumerate}
-    \item \textbf{The Controller ($Z_H$):} We define the Higgs Impedance as the inverse of its regulation protocol ($1/\lambda$). Crucially, because this regulator operates under the Entropic Action filter  \cite{meyer_ieaction_2026}, its effective impedance is exponentially modulated by its action cost ($T_H = 2\lambda$):
+    \item \textbf{The Controller ($Z_H$):} We define the Higgs Impedance as the inverse of its regulation protocol ($1/\lambda$). Crucially, because this regulator operates under the Entropic Action filter  \cite{meyer_ieaction_2026}, its effective impedance is exponentially modulated by its action cost ($T_H = 2\lambda$). \textit{($Z_H$ is the intrinsic self-impedance of the regulator, defined before propagation and therefore not subject to Coordinate Overhead $\eta$, which applies only to signals transmitted over the bulk coordinate grid.)}
     \begin{equation}
     Z_H = \frac{1}{\lambda} e^{-2\lambda} \approx \frac{1}{0.129424} (0.7719) \approx \mathbf{\HiggsImpedanceVal}
     \end{equation}
-    
+
     \item \textbf{The Aperture ($A_{weak}$):} The hardware aperture of the Weak interaction is the sum of the lattice primitives involved in a state transition: the interaction links ($\sigma=5$) plus the node occupancy bit ($+1$). Because this aperture is projected onto the physical manifold, it is subject to the \textbf{Coordinate Overhead} ($\eta$):
     \begin{equation}
     A_{weak} = (\sigma + 1) \cdot \eta \approx 6 \cdot 0.994186 \approx \mathbf{\WeakApertureProjVal}
@@ -294,8 +300,8 @@ We verify this by comparing the \textbf{Higgs Impedance} (the controller) to the
 \end{enumerate}
 
 \paragraph{The Result}
-The regulator impedance ($Z_H \approx 5.9644$) matches the projected aperture ($A_{weak} \approx 5.9651$) to within \textbf{0.01\%}. 
+The regulator impedance ($Z_H \approx 5.9644$) matches the projected aperture ($A_{weak} \approx 5.9651$) to within \textbf{0.01\%}.
 
-This convergence confirms that the \textbf{Electroweak Scale} is the unique energy magnitude required to satisfy global impedance matching between the lattice resonance and the surface of matter. The $O(10^{-4})$ residual is numerically consistent with the $O(\alpha^2)$ truncation limits of the framework's geometric corrections ($\alpha^2 \approx 0.5 \times 10^{-4}$). 
+This convergence confirms that the \textbf{Electroweak Scale} is the unique energy magnitude required to satisfy global impedance matching between the lattice resonance and the surface of matter. The $O(10^{-4})$ residual is numerically consistent with the $O(\alpha^2)$ truncation limits of the framework's geometric corrections ($\alpha^2 \approx 0.5 \times 10^{-4}$).
 
 The difference represents the \textbf{maximum precision} allowed by a first-order geometric derivation and identifies the theoretical floor of the vacuum's entropic drag. In the IE framework, this residual is the \textbf{minimum entropic cost} required for information to cross the interface boundary. This structural lock demonstrates that the Resonant Interface is a mathematically closed, self-sustaining regulatory subsystem, resolving the Hierarchy Problem as a necessary condition for substrate persistence.
